@@ -1,4 +1,8 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router'; // Router importálása
 
-createApp(App).mount('#app')
+// Az alkalmazás létrehozása és a sajat routerunk hasznalata
+createApp(App)
+  .use(router)
+  .mount('#app');

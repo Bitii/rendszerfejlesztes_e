@@ -4,16 +4,23 @@ import Signup from "./components/Signup.vue";
 </script>
 
 <template>
-  <header>
-    <img src="../src/assets/logo.svg" alt="logo" />
-    <div class="topnav">
-      <a class="active" href="#Menu">Menu</a>
-      <input type="text" placeholder="Search..." />
-    </div>
-  </header>
-  <main>
-    
-  </main>
+  <!-- Egyetlen gyökérelem lehet csak -->
+  <div id="app">
+    <header>
+      <img src="@/assets/logo.svg" alt="logo" />
+      <div class="topnav">
+        <a class="active" href="/">Home</a> 
+        <a href="/signup">Sign Up</a>
+        <a href="/signin">Sign In</a>
+        <input type="text" placeholder="Search..." />
+      </div>
+    </header>
+
+    <main>
+      <!-- Router megjelenítési pont (routernek megfelelo oldal jelenik meg) -->
+      <router-view />
+    </main>
+  </div>
 </template>
 
 <style>
