@@ -1,17 +1,19 @@
 <script setup>
 import Signin from "./components/Signin.vue";
 import Signup from "./components/Signup.vue";
+import logo from '@/assets/logo.svg';
 </script>
 
 <template>
   <!-- Egyetlen gyökérelem lehet csak -->
   <div id="app">
     <header>
-      <img src="@/assets/logo.svg" alt="logo" />
+      <img :src="logo" alt="logo" />
       <div class="topnav">
         <a class="active" href="/">Home</a> 
         <a href="/signup">Sign Up</a>
         <a href="/signin">Sign In</a>
+        <a href="/user">User</a>
         <input type="text" placeholder="Search..." />
       </div>
     </header>
