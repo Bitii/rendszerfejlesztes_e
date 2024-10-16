@@ -2,6 +2,8 @@
 import Signin from "./components/Signin.vue";
 import Signup from "./components/Signup.vue";
 import logo from '@/assets/logo.svg';
+import User from "./components/User.vue";
+import Index from "./components/Index.vue";
 </script>
 
 <template>
@@ -22,6 +24,14 @@ import logo from '@/assets/logo.svg';
       <!-- Router megjelenítési pont (routernek megfelelo oldal jelenik meg) -->
       <router-view />
     </main>
+
+    <footer>
+      <h3>Follow us on social media</h3>
+      <a href="https://www.facebook.com"><img src="../assets/facebook.png" alt="facebook" /></a>
+      <a href="https://www.instagram.com"><img src="../assets/instagram.png" alt="instagram" /></a>
+      <a href="https://www.twitter.com"><img src="../assets/twitter.png" alt="twitter" /></a>
+      <p>&copy; 2021</p>
+    </footer>
   </div>
 </template>
 
@@ -55,5 +65,16 @@ header {
 header img{
   width: 80px;
   height: 80px;
+}
+
+footer{
+  background-color: var(--black);
+  color: white;
+  margin-top: 30px;
+  text-align: center;
+  padding: 20px;
+}
+footer a{
+  margin: 0 10px;
 }
 </style>
