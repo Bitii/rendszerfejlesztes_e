@@ -68,13 +68,11 @@ header img{
 }
 
 footer{
+  display: flex;
+  flex-direction: column;
   background-color: var(--black);
   color: white;
-  margin-top: 30px;
   text-align: center;
-  padding: 20px;
-}
-footer a{
-  margin: 0 10px;
+  margin-top: 5%;
 }
 </style>

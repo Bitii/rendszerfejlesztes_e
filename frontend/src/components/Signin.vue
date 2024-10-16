@@ -46,7 +46,7 @@ const login = () => {
         </div>
         <input type="submit" class="btn" value="Sign in" />
         <p>---------- or ----------</p>
-        <input type="submit" class="btn" value="Create a new account" />
+        <input type="button" class="btn" value="Create a new account" /> <!-- még nem irányít át a regisztrálós oldalra -->
       </form>
     </div>
   </main>

@@ -74,11 +74,12 @@ const register = () =>
         <input type="submit" class="btn" value="Create account" />
       </form>
     </div>
-    <p>Already have an account? <a href="Signin.vue">sign in</a></p>
+    <p class="already">Already have an account? <a href="Signin.vue">sign in</a></p>
   </main>
 </template>
 
 <style scoped>
+
 form {
   display: flex;
   align-items: center;
@@ -153,6 +154,7 @@ label {
 .profilepic {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   width: 100%;
   margin-top: 1rem;
@@ -173,6 +175,10 @@ label {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.already {
+  color: var(--white);
+  margin-top: 1rem;
 }
 
 p {
