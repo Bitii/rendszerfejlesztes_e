@@ -1,9 +1,12 @@
 <script setup>
-import Signin from "./components/Signin.vue";
-import Signup from "./components/Signup.vue";
 import logo from '@/assets/logo.svg';
-import User from "./components/User.vue";
-import Index from "./components/Index.vue";
+import { ref } from 'vue';
+
+const dropdownVisible = ref(false);
+
+const dropDown = () => {
+  dropdownVisible.value = !dropdownVisible.value;
+};
 </script>
 
 <template>
@@ -12,10 +15,13 @@ import Index from "./components/Index.vue";
     <header>
       <img :src="logo" alt="logo" />
       <div class="topnav">
-        <a class="active" href="/">Home</a> 
-        <a href="/signup">Sign Up</a>
-        <a href="/signin">Sign In</a>
-        <a href="/user">User</a>
+        <button @click=dropDown>Menu</button>
+        <div id="myDropdown" class="dropdown-content" :style="{ display: dropdownVisible ? 'block' : 'none' }">
+          <a class="active" href="/">Home</a>
+          <a href="/signup">Sign Up</a>
+          <a href="/signin">Sign In</a>
+          <a href="/user">User</a>
+        </div>
         <input type="text" placeholder="Search..." />
       </div>
     </header>
@@ -37,11 +43,14 @@ import Index from "./components/Index.vue";
 
 <style>
 @import url("https://fonts.cdnfonts.com/css/berlin-sans-fb-demi");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Berlin Sans FB Demi", sans-serif;
 }
+
 :root {
   --black: rgb(12, 11, 0);
   --white: rgb(252, 247, 247);
@@ -49,12 +58,64 @@ import Index from "./components/Index.vue";
   --yellow: rgb(222, 181, 34);
   --grey: rgb(163, 158, 158);
 }
+
 body {
   background-color: var(--black);
-  font-family: "Berlin Sans FB Demi", sans-serif;
   color: var(--white);
   text-align: center;
 }
+.topnav {
+  display: inline-block;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+}
+
+.topnav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  color: var(--blue);
+}
+
+.topnav input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.topnav button {
+  margin-right: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background: none;
+  color: var(--blue);
+  font-size: 20px;
+}
+.topnav button:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: var(--black);
+  min-width: 160px;
+  display: none;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
 header {
   background-color: var(--black);
   color: white;
@@ -62,12 +123,14 @@ header {
   text-align: center;
   display: flex;
 }
-header img{
+
+header img {
   width: 80px;
   height: 80px;
 }
 
-footer{
+
+footer {
   display: flex;
   flex-direction: column;
   background-color: var(--black);
