@@ -45,7 +45,7 @@ const login = () => {
           <input type="password" required v-model="password" />
         </div>
         <input type="submit" class="btn" value="Sign in" />
-        <p>---------- or ----------</p>
+        <div id="separator"><span>  or  </span></div>
         <input type="submit" class="btn" value="Create a new account" />
       </form>
     </div>
@@ -68,14 +68,18 @@ form {
   grid-row: 1 / 2;
 }
 .sign-in-form {
-  border: #333 solid 3px;
+  border: #333 solid 5px;
   min-width: 450px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: auto;
 }
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80vh;
+  margin-bottom: 5rem;
 }
 label {
   color: var(--white);
@@ -85,11 +89,11 @@ label {
 }
 
 .input-field {
-  max-width: 380px;
+  max-width: 400px;
   width: 100%;
   background-color: var(--grey);
-  margin: 10px 10px 0px 10px;
-  height: 45px;
+  margin: 15px 10px 0px 10px;
+  height: 2rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -123,6 +127,42 @@ label {
 }
 
 .btn:hover {
-  background-color: #4d84e2;
+  background-color: #deb522;
+}
+
+#separator {
+  color: #deb522;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  display: flex;
+}
+
+#separator::before{
+  content: '';
+  display: block;
+  min-width: 170px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  background: #deb522;
+  z-index: -20;
+}
+#separator::after {
+  content: '';
+  display: block;
+  min-width: 170px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  background: #deb522;
+  z-index: -20;
+}
+span {
+  background-color: var(--black);
+  padding-left: 10px;
+  padding-right: 10px;
 }
 </style>

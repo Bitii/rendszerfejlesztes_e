@@ -12,7 +12,7 @@ import Signup from "./components/Signup.vue";
         <a class="active" href="/">Home</a> 
         <a href="/signup">Sign Up</a>
         <a href="/signin">Sign In</a>
-        <input type="text" placeholder="Search..." />
+        <input type="text" id="search-bar" placeholder="Search..." />
       </div>
     </header>
 
@@ -35,7 +35,7 @@ import Signup from "./components/Signup.vue";
   --white: rgb(252, 247, 247);
   --blue: rgb(18, 139, 181);
   --yellow: rgb(222, 181, 34);
-  --grey: rgb(163, 158, 158);
+  --grey: rgb(51, 51, 51);
 }
 body {
   background-color: var(--black);
@@ -49,9 +49,23 @@ header {
   margin-bottom: 30px;
   text-align: center;
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 header img{
   width: 80px;
   height: 80px;
+  margin-left: 20px;
+}
+#search-bar {
+  max-width: 200vh;
+}
+.topnav {
+  display: flex;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+  bottom: 40%;
+  gap: 10%;
 }
 </style>

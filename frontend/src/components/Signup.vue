@@ -35,6 +35,7 @@ const register = () =>
 
 <template>
   <main>
+  <div id="main-div">
     <div class="form-container">
       <form @submit.prevent="register" id="signup" class="sign-in-form">
         <h2 class="title">Create your account</h2>
@@ -56,7 +57,7 @@ const register = () =>
           <input type="password" required v-model="jelszo2" />
         </div>
         <!-- profilkép feltöltés -->
-        <p>Upload your profile picteure:<br />(optional)</p>
+        <p class="upload-pic-text">Upload your profile picture:<br />(optional)</p>
         <div class="profilepic">
           <div class="img-holder">
             <img src="" id="img" alt="profile picture" />
@@ -75,6 +76,7 @@ const register = () =>
       </form>
     </div>
     <p>Already have an account? <a href="Signin.vue">sign in</a></p>
+  </div>
   </main>
 </template>
 
@@ -92,14 +94,17 @@ form {
   grid-row: 1 / 2;
 }
 .sign-in-form {
-  border: #333 solid 3px;
-  min-width: 700px;
+  border: #333 solid 5px;
+  min-width: 450px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: auto;
 }
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: auto;
 }
 label {
   color: var(--white);
@@ -109,11 +114,11 @@ label {
 }
 
 .input-field {
-  max-width: 380px;
+  max-width: 400px;
   width: 100%;
   background-color: var(--grey);
-  margin: 10px 10px 0px 10px;
-  height: 45px;
+  margin: 15px 10px 0px 10px;
+  height: 2rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -147,12 +152,13 @@ label {
 }
 
 .btn:hover {
-  background-color: #4d84e2;
+  background-color: #deb522;
 }
 
 .profilepic {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  text-align: left;
   gap: 1rem;
   width: 100%;
   margin-top: 1rem;
@@ -166,13 +172,15 @@ label {
   justify-content: center;
   align-items: center;
   background-color: var(--black);
-  border: solid 1px var(--grey);
+  border: solid 2px var(--grey);
 }
 
 .img-holder img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  min-width: auto;
+  height: auto;
   object-fit: cover;
+  text-align: center;
 }
 
 p {
@@ -182,7 +190,18 @@ p {
 
 .title {
   color: var(--white);
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
+#main-div {
+  height: auto;
+  margin-bottom: 5rem;
+  align-items: center;
+  overflow: hidden;
+}
+.upload-pic-text {
+  margin-top: 2rem;
+}
+
+
 </style>
