@@ -4,7 +4,8 @@ import { ref } from 'vue';
 
 const dropdownVisible = ref(false);
 
-const dropDown = () => {
+const dropDown = () =>
+{
   dropdownVisible.value = !dropdownVisible.value;
 };
 </script>
@@ -64,6 +65,7 @@ body {
   color: var(--white);
   text-align: center;
 }
+
 .topnav {
   display: inline-block;
   justify-content: center;
@@ -96,6 +98,7 @@ body {
   color: var(--blue);
   font-size: 20px;
 }
+
 .topnav button:hover {
   background-color: var(--blue);
   color: var(--white);
@@ -129,13 +132,12 @@ header img {
   height: 80px;
 }
 
-
 footer {
   display: flex;
   flex-direction: column;
   background-color: var(--black);
   color: white;
   text-align: center;
-  margin-top: 5%;
+  margin-bottom: 30px;
 }
 </style>

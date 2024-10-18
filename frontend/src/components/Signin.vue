@@ -2,6 +2,7 @@
 <script setup>
 import { ref } from "vue";
 import axios from "axios";
+import router from "../router";
 
 const email = ref("");
 const password = ref("");
@@ -24,6 +25,7 @@ const login = () => {
       user.value = resp.data.user;
       user.token = resp.data.user.token;
       console.log(user.value, user.token);
+      router.push("/");
     })
     .catch((err) => (error.value = "Hibás email vagy jelszó!"));
 };
@@ -60,7 +62,7 @@ form {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0rem 5rem;
+  padding: 0rem 3rem;
   gap: 0.7rem;
   transition: all 0.2s 0.7s;
   overflow: hidden;
@@ -69,13 +71,14 @@ form {
 }
 .sign-in-form {
   border: #333 solid 3px;
-  min-width: 450px;
+  min-width: 350px;
 }
 .form-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 350px;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 60vh;
 }
 label {
   color: var(--white);
@@ -85,7 +88,6 @@ label {
 }
 
 .input-field {
-  max-width: 380px;
   width: 100%;
   background-color: var(--grey);
   margin: 10px 10px 0px 10px;
@@ -99,12 +101,10 @@ label {
   background: none;
   outline: none;
   border: none;
-  line-height: 1;
-  font-weight: 600;
   font-size: 1.1rem;
   color: var(--white);
   height: 100%;
-  padding: 0.7rem;
+  padding: 0 10px;
 }
 .btn {
   width: fit-content;
