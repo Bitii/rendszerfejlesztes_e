@@ -25,9 +25,11 @@ const register = () =>
       email: email.value,
       nev: nev.value,
       jelszo: jelszo.value,
-    }).then((resp) => {
+    }).then((resp) =>
+    {
       console.log(resp.data);
-    }).catch((err) => {
+    }).catch((err) =>
+    {
       error.value = "Hiba a regisztráció során!";
     });
 }
@@ -37,7 +39,7 @@ const register = () =>
   <main>
   <div id="main-div">
     <div class="form-container">
-      <form @submit.prevent="register" id="signup" class="sign-in-form">
+      <form @submit.prevent="register" id="signup" class="sign-up-form">
         <h2 class="title">Create your account</h2>
         {{ error }}
         <label for="email">Email address</label>
@@ -63,19 +65,14 @@ const register = () =>
             <img src="" id="img" alt="profile picture" />
           </div>
           <div>
-            <p>Upload picture</p>
-            <input
-              type="file"
-              id="profilepic"
-              name="profilepic"
-              accept="image/*"
-            />
+            <label for="profilepic">Upload picture</label>
+            <input type="file" id="profilepic" name="profilepic" accept="image/*" />
           </div>
         </div>
         <input type="submit" class="btn" value="Create account" />
       </form>
+      <p class="already">Already have an account? <a href="/signin">sign in</a></p>
     </div>
-    <p>Already have an account? <a href="Signin.vue">sign in</a></p>
   </div>
   </main>
 </template>
@@ -86,9 +83,8 @@ form {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0rem 5rem;
+  padding: 1rem;
   gap: 0.7rem;
-  transition: all 0.2s 0.7s;
   overflow: hidden;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
@@ -101,7 +97,8 @@ form {
   margin-top: auto;
 }
 .form-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 350px;
   justify-content: center;
   align-items: center;
   height: auto;
@@ -111,6 +108,11 @@ label {
   font-size: 1.2rem;
   position: relative;
   top: 1.4rem;
+}
+
+.sign-up-form {
+  border: #333 solid 3px;
+  min-width: 350px;
 }
 
 .input-field {
@@ -128,13 +130,19 @@ label {
   background: none;
   outline: none;
   border: none;
-  line-height: 1;
-  font-weight: 600;
   font-size: 1.1rem;
   color: var(--white);
   height: 100%;
-  padding: 0.7rem;
+  padding: 0 10px;
 }
+
+label {
+  color: var(--white);
+  font-size: 1.2rem;
+  position: relative;
+  top: 1.4rem;
+}
+
 .btn {
   width: fit-content;
   background-color: var(--blue);
@@ -157,9 +165,10 @@ label {
 
 .profilepic {
   display: flex;
+  gap: 20px;
+  padding: 10px;
   align-items: flex-start;
   text-align: left;
-  gap: 1rem;
   width: 100%;
   margin-top: 1rem;
 }
@@ -167,27 +176,38 @@ label {
 .img-holder {
   width: 100px;
   height: 100px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--black);
-  border: solid 2px var(--grey);
+  border: 1px solid var(--white);
 }
 
 .img-holder img {
-  max-width: 100%;
-  min-width: auto;
-  height: auto;
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.profilepic input {
+  display: none;
+}
+
+.profilepic div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+p{
+  text-align: left;
+}
+
+.already {
   text-align: center;
-}
-
-p {
+  margin: 10px;
   color: var(--white);
-  font-size: 1.2rem;
 }
 
+.already a {
+  color: var(--blue);
+  text-decoration: none;
+}
 .title {
   color: var(--white);
   font-size: 1.5rem;
