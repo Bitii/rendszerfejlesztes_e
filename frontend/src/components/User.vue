@@ -191,19 +191,6 @@ const deletReview = (index) => {
                 </div>
             </div>
         </section>
-
-        <!-- Kozossegi media ikonok -->
-        <footer>
-            <div class="footer-content">
-                <div class="social-icons">
-                    <span class="icon-facebook"></span>
-                    <span class="icon-twitter"></span>
-                    <span class="icon-instagram"></span>
-                    <span class="icon-youtube"></span>
-                </div>
-                <p>Follow us!</p>
-            </div>
-        </footer>
     </div>
 </template>
 
