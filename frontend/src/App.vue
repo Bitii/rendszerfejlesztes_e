@@ -34,9 +34,9 @@ const dropDown = () =>
 
     <footer>
       <h3>Follow us on social media</h3>
-      <a href="https://www.facebook.com"><img src="../assets/facebook.png" alt="facebook" /></a>
-      <a href="https://www.instagram.com"><img src="../assets/instagram.png" alt="instagram" /></a>
-      <a href="https://www.twitter.com"><img src="../assets/twitter.png" alt="twitter" /></a>
+      <a href="https://www.facebook.com"><img src="./assets/facebook.png" alt="facebook" /></a>
+      <a href="https://www.instagram.com"><img src="./assets/instagram.png" alt="instagram" /></a>
+      <a href="https://www.twitter.com"><img src="./assets/twitter.png" alt="twitter" /></a>
       <p>&copy; 2021</p>
     </footer>
   </div>
@@ -132,12 +132,16 @@ header img {
   height: 80px;
 }
 
-footer {
+footer h3{
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   background-color: var(--black);
   color: white;
   text-align: center;
-  margin-bottom: 30px;
+}
+footer img {
+  width: 30px;
+  height: 30px;
+  margin: 2px;
 }
 </style>
