@@ -118,6 +118,7 @@
   gap: 10px;
   padding: 10px;
   overflow: hidden;
+  margin: 10px;
 }
 
 .panels img {
