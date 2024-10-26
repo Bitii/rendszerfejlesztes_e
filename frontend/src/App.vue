@@ -52,6 +52,18 @@ const dropDown = () =>
   box-sizing: border-box;
   font-family: "Berlin Sans FB Demi", sans-serif;
 }
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--yellow);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--grey);
+}
 
 :root {
   --black: rgb(12, 11, 0);

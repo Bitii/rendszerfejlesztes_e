@@ -53,17 +53,6 @@ const goToMovie = (imdbID) =>
 
 <style scoped>
 
-::-webkit-scrollbar {
-    width: 5px;
-}
-::-webkit-scrollbar-thumb {
-    background-color: var(--yellow);
-    border-radius: 5px;
-}
-::-webkit-scrollbar-track {
-    background-color: var(--grey);
-}
-
 input {
     padding: 7px;
     font-size: 1rem;
