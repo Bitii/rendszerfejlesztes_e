@@ -1,6 +1,7 @@
 <script setup>
 import logo from '@/assets/logo.svg';
 import { ref } from 'vue';
+import Searchbar from './components/Searchbar.vue';
 
 const dropdownVisible = ref(false);
 
@@ -23,7 +24,7 @@ const dropDown = () =>
           <a href="/signin">Sign In</a>
           <a href="/user">User</a>
         </div>
-        <input type="text" placeholder="Search..." />
+        <Searchbar />
       </div>
     </header>
 
@@ -81,12 +82,6 @@ body {
 
 .topnav a:hover {
   color: var(--blue);
-}
-
-.topnav input {
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
 }
 
 .topnav button {
