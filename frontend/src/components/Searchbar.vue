@@ -3,26 +3,29 @@ import axios from "axios";
 import { ref, reactive } from "vue";
 import { useRouter } from "vue-router";
 
-const OMDBapi = "https://www.omdbapi.com/?i=tt3896198&apikey=ac05d1d7"
+const OMDBapi = "https://www.omdbapi.com/?i=tt3896198&apikey=ac05d1d7" //api kulcs - omdbapi.com
 const searchBar = ref("");
-const movies = reactive([]);
+const movies = reactive([]); //tömb, amiben a keresés eredményeit tároljuk (reactive, mert a tömb elemei változhatnak)
 const router = useRouter();
 
+/* kereső fügvény */
 const search = () =>
 {
     axios.get(OMDBapi, {
         params: {
-            s: searchBar.value,
+            s: searchBar.value, //kereső mező értéke, az api leíratában s: kulcs
         }
     }).then(response =>
     {
-        movies.splice(0, movies.length, ...response.data.Search || []);
+        movies.splice(0, movies.length, ...response.data.Search || []); //ha nincs találat, akkor üres tömb
         console.log(movies);
     }).catch((err) =>
         {
             console.log(err);
         });
 }
+
+/* film részletek oldalra navigálás */
 const goToMovie = (imdbID) =>
 {
     router.push({ name: 'MovieDetail', params: { id: imdbID } });
@@ -35,9 +38,12 @@ const goToMovie = (imdbID) =>
     <input type="text" placeholder="Search..." v-model="searchBar" />
     <button @click="search">Search</button>
 
-    <div class="search-result" v-if="movies != ''">
+    <!-- keresési találatok megjelenítése -->
+    <div class="search-result" v-if="movies != ''"> <!-- ha van találat, akkor jelenítse meg -->
         <ul>
-            <li v-for="movie in movies" :key="movie.imdbID" @click="goToMovie(movie.imdbID)">
+            <!-- v-for -> bejárja movies tömböt és kiíratjuk az elemeket -->
+             <!-- kulcsnak átadtjuk a response-ból megkapott imdbID -t -->
+            <li v-for="movie in movies" :key="movie.imdbID" @click="goToMovie(movie.imdbID)"> 
                     <img :src="movie.Poster" alt="">
                     {{ movie.Title }} ({{ movie.Year }})
             </li>

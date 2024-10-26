@@ -24,7 +24,7 @@ const dropDown = () =>
           <a href="/signin">Sign In</a>
           <a href="/user">User</a>
         </div>
-        <Searchbar />
+        <Searchbar /> <!-- Searchbar komponens megjelenítése -->
       </div>
     </header>
 
