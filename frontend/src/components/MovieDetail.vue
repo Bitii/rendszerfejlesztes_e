@@ -1,22 +1,30 @@
 <script setup>
 import { useMovieStore } from '../../stores/movie'; //importáljuk a store-t
 
+const img = "https://image.tmdb.org/t/p/original";
 const movieData = useMovieStore();
+
 </script>
 
 <template>
-<div>
-    <h1>Movie Detail</h1>
-    <div>
-        <img :src="movieData.movie.Poster" alt="">
-        <h2>{{ movieData.movie.Title }}</h2>
-        <p>{{ movieData.movie.Year }}</p>
-        <p>{{ movieData.movie.Plot }}</p>
-    </div>
-
-</div>
+    <h1>{{ movieData.movie.title }}</h1>
+    <p>{{ movieData.movie.overview }}</p>
+    <p>Rating: {{ movieData.movie.vote_average }}</p>
+    <p>Release date: {{ movieData.movie.release_date }}</p>
+    <img :src="img + movieData.movie.poster_path" alt="The searched movie's picture">
 </template>
 
 <style scoped>
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+}
 </style>
