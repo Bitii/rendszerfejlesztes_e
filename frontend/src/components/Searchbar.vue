@@ -35,11 +35,11 @@ const goToMovie = (imdbID) =>
 </script>
 
 <template>
-    <input type="text" placeholder="Search..." v-model="searchBar" />
+    <input type="text" placeholder="Search..." v-model="searchBar" @input="search"/> <!-- @input - ha input érkezik a kereső mezőben akkor lefut a keresés -->
     <button @click="search">Search</button>
 
     <!-- keresési találatok megjelenítése -->
-    <div class="search-result" v-if="movies != ''"> <!-- ha van találat, akkor jelenítse meg -->
+    <div class="search-result" v-if="movies.length > 0"> <!-- ha van találat, akkor jelenítse meg -->
         <ul>
             <!-- v-for -> bejárja movies tömböt és kiíratjuk az elemeket -->
              <!-- kulcsnak átadtjuk a response-ból megkapott imdbID -t -->
