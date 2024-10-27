@@ -5,6 +5,10 @@ import Searchbar from './components/Searchbar.vue';
 
 const dropdownVisible = ref(false);
 
+const goHome = () => {
+  router.push('/');
+};
+
 const dropDown = () =>
 {
   dropdownVisible.value = !dropdownVisible.value;
@@ -15,7 +19,7 @@ const dropDown = () =>
   <!-- Egyetlen gyökérelem lehet csak -->
   <div id="app">
     <header>
-      <img :src="logo" alt="logo" />
+      <a href="/"><img :src="logo" alt="logo"/></a>
       <div class="topnav">
         <button @click=dropDown>Menu</button>
         <div id="myDropdown" class="dropdown-content" :style="{ display: dropdownVisible ? 'block' : 'none' }">
