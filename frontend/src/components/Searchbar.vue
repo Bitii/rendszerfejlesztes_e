@@ -2,32 +2,36 @@
 import axios from "axios";
 import { ref, reactive } from "vue";
 import { useRouter } from "vue-router";
+import { useMovieStore } from '../../stores/movie'; //importáljuk a store-t
 
 const OMDBapi = "https://www.omdbapi.com/?i=tt3896198&apikey=ac05d1d7" //api kulcs - omdbapi.com
 const searchBar = ref("");
 const movies = reactive([]); //tömb, amiben a keresés eredményeit tároljuk (reactive, mert a tömb elemei változhatnak)
 const router = useRouter();
 
+const movieData = useMovieStore();
+
 /* kereső fügvény */
-const search = () =>
-{
-    axios.get(OMDBapi, {
-        params: {
-            s: searchBar.value, //kereső mező értéke, az api leíratában s: kulcs
-        }
-    }).then(response =>
-    {
-        movies.splice(0, movies.length, ...response.data.Search || []); //ha nincs találat, akkor üres tömb
-        console.log(movies);
-    }).catch((err) =>
-        {
-            console.log(err);
-        });
-}
+const search = async () => {
+  try {
+    const response = await axios.get(OMDBapi, {
+      params: {
+        s: searchBar.value, //kereső mező értéke, az api leíratában s: kulcs
+      }
+    });
+    movies.splice(0, movies.length, ...response.data.Search || []); //ha nincs találat, akkor üres tömb
+    console.log(movies);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 /* film részletek oldalra navigálás */
 const goToMovie = (imdbID) =>
 {
+    //a store-ban tároljuk a kiválasztott film adatait hogy ebből generáljuk le a detail oldalt
+    movieData.movie = movies.find((movie) => movie.imdbID === imdbID);
+    //navigálás a detail oldalra
     router.push({ name: 'MovieDetail', params: { id: imdbID } });
     searchBar.value = '';
     movies.splice(0, movies.length);
@@ -35,6 +39,7 @@ const goToMovie = (imdbID) =>
 </script>
 
 <template>
+    <div class="test" v-for="movie in movies" :key="movie.imdbID">{{ movie.imdbID }}</div>
     <input type="text" placeholder="Search..." v-model="searchBar" @input="search"/> <!-- @input - ha input érkezik a kereső mezőben akkor lefut a keresés -->
     <button @click="search">Search</button>
 
@@ -52,6 +57,12 @@ const goToMovie = (imdbID) =>
 </template>
 
 <style scoped>
+.test {
+    background-color:var(--yellow);
+    width: 100px;
+    height: 10px;
+    color: black;
+}
 
 input {
     padding: 7px;
