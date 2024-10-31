@@ -109,7 +109,7 @@ const editReview = (index) => {
     // ...
 };
 
-const deletReview = (index) => {
+const deleteReview = (index) => {
     reviews.value.splice(index, 1);
 };
 </script>
@@ -118,18 +118,18 @@ const deletReview = (index) => {
     <div id="user-profile">
         <!-- Fejlec -->
         <header>
-            <div class="profile-header">
+            <div class="profile-pic">
                 <img :src="profilePicture" alt="profile picture" class="profile-img" />
-                    <button class="add-picture-button" @click="addProfilePicture">➕</button>
-                    <button class="delete-picture-button" @click="deleteProfilePicture">🗑️</button>
-                <div class="profile-info">
-                    <p>Username: <span>{{ username }}</span></p>
-                    <p>Email address: <span v-if="!editMode">{{ email }}</span><input v-if="editMode" type="text" v-model="email" /></p>
-                    <p>Password: <span v-if="!editMode">********</span><input v-if="editMode" type="password" v-model="password" /></p>
-                    <p>Registration date: {{ registrationDate }}</p>
-                    <button @click="toggleEditMode">{{ editMode ? 'Save Profile' : 'Edit Profile' }}</button>
-                </div>
+                <button class="add-picture-button" @click="addProfilePicture">➕</button>
+                <button class="delete-picture-button" @click="deleteProfilePicture">🗑️</button>
+                <p>Registration date: {{ registrationDate }}</p>
             </div>
+            <div class="profile-info">
+                <p>Username: <span>{{ username }}</span></p>
+                <p>Email address: <span v-if="!editMode">{{ email }}</span><input v-if="editMode" type="text" v-model="email" /></p>
+                <p>Password: <span v-if="!editMode">********</span><input v-if="editMode" type="password" v-model="password" /></p>                                
+            </div>
+            <button class="edit-button" @click="toggleEditMode">{{ editMode ? 'Save Profile' : 'Edit Profile' }}</button>
         </header>
 
         <!-- Szekciok -->
@@ -203,42 +203,67 @@ const deletReview = (index) => {
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: inline-flex;
     margin-bottom: 20px;
-    background-color: #222;
     padding: 15px;
     border-radius: 10px;
+    position: relative;
+}
+
+.profile-pic {
+    text-align: left;
+    position: relative;
+}
+
+.profile-pic p {
+    margin: 10px;
 }
 
 .profile-img {
-    width: 150px;
-    height: 150px;
+    position: relative;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
     border: 3px solid #444;
-    margin-right: 20px;
+    z-index: 0;
+    margin-bottom: 10px;
 }
 
 .add-picture-button,
 .delete-picture-button {
+    position: absolute;
     background: none;
-    border: none;
     cursor: pointer;
-    font-size: 24px;
-    color: #00acee;
+    font-size: 20px;
+    color: var(--yellow);
+    z-index: 1;
+    margin-left: 5px;
+}
+.delete-picture-button{
+    top: 15%;
 }
 
+.profile-info {
+    left: 25%;
+    top: 5%;
+    position: absolute;
+    margin: 20px;
+}
 .profile-info p {
-    margin: 5px 0;
+    margin: 0 0 5px 0;
     font-weight: bold;
-    color: #00acee;
+    color: var(white);
+    text-align: left;
 }
-
+.edit-button {
+    position: absolute;
+    margin-right: 20px;
+    right: 0%;
+    top: 10%;
+}
 button {
-    margin-top: 10px;
-    background-color: #007BFF;
+    background-color: var(--blue);
     color: white;
     border: none;
     border-radius: 5px;
@@ -254,7 +279,7 @@ h3 {
     justify-content: space-between;
     background-color: #444;
     padding: 10px;
-    margin-top: 15px;
+    margin: 15px 20px 0 20px;
     border-radius: 5px;
     color: #00acee;
     font-weight: bold;
@@ -262,7 +287,7 @@ h3 {
 }
 
 .section-content {
-    margin-top: 10px;
+    margin: 10px 20px 0 20px;
     background-color: #333;
     padding: 10px;
     border-radius: 5px;
@@ -295,6 +320,7 @@ h3 {
 
 .delete-button {
     position: absolute;
+    padding: 0%;
     top: 5px;
     right: 5px;
     background: none;
@@ -305,7 +331,7 @@ h3 {
 }
 
 .reviews-section {
-    margin-top: 20px;
+    margin: 20px 20px 0 20px;
     background-color: #222;
     padding: 15px;
     border-radius: 10px;

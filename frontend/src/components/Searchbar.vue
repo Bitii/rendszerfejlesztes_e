@@ -74,11 +74,11 @@ const goToMovie = (id) =>
 }
 
 input {
-    padding: 7px;
+    padding: 10px;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
-    width: 15rem;
+    min-width: 20rem;
 }
 
 input:focus {
@@ -91,7 +91,7 @@ input:focus {
     background-color: var(--white);
     color: var(--black);
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-height: 400px;
     overflow-y: auto;

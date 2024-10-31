@@ -84,10 +84,12 @@ body {
 }
 
 .topnav {
-  display: inline-block;
+  display: inline-flex;
   justify-content: center;
   gap: 20px;
-  margin: 20px;
+  /*margin: 20px;*/
+  margin: auto;
+  position: relative;
 }
 
 .topnav a {
@@ -97,17 +99,17 @@ body {
 }
 
 .topnav a:hover {
-  color: var(--blue);
+  color: var(--yellow);
 }
 
 .topnav button {
-  margin-right: 20px;
-  padding: 5px;
-  border-radius: 5px;
+  margin-right: 30px;
+  padding: 10px;
+  border-radius: 10px;
   border: none;
   background: none;
   color: var(--blue);
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .topnav button:hover {
@@ -117,10 +119,13 @@ body {
 
 .dropdown-content {
   position: absolute;
-  background-color: var(--black);
+  background-color: var(--grey);
   min-width: 160px;
   display: none;
-  z-index: 1;
+  z-index: 2;
+  top: 100%;
+  left: 0;
+  margin-top: 40px;
 }
 
 .dropdown-content a {
@@ -133,16 +138,23 @@ body {
 header {
   background-color: var(--black);
   color: white;
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
   text-align: center;
-  display: flex;
+  align-items: center;
+  display: inline-flex;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  position: relative;
+  padding: 40px 40px;
 }
 
 header img {
   width: 80px;
   height: 80px;
+  position: absolute;
+  left: 10px;
+  top: 15px;
 }
 
 footer h3{
@@ -155,7 +167,7 @@ footer h3{
 footer img {
   width: 30px;
   height: 30px;
-  margin: 2px;
+  margin: 5px 15px 5px 15px;
 }
 
 </style>
