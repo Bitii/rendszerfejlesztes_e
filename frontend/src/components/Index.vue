@@ -5,7 +5,6 @@
 <template>
   <div class="movies">
       <p class="slogan">MOVIES A TO Z</p>
-    <!-- <img class="szalag" src="../assets/szalag2.jpg" alt="movie"> -->
   </div>
 
   <h2>Top 10 this week</h2>
@@ -96,17 +95,12 @@
 
 <style scoped>
 .movies {
-  /*background: url(../assets/szalag.jpg) repeat-x;*/
-  /*background-size: cover;*/
-  /*flex-direction: row;*/
   background: linear-gradient(to top, rgba(222, 181, 34, 0.055) 0%, rgba(222, 181, 34, 0.55) 100%);
-  height: 250px;/*
-  gap: 10px;
-  padding: 10px;*/
+  height: 250px;
   margin-bottom: 20px;
   overflow: hidden;
-  /*animation: szalag 15s linear infinite;*/
 }
+
 .slogan {
   top: 35%;
   margin: auto;
@@ -117,17 +111,6 @@
   text-shadow: 10px 10px black;
   letter-spacing: 10px;
 }
-
-/*.szalag {
-
-  object-fit: fill;
-  animation: szalag 25s linear infinite;
-}
-@keyframes szalag{
-  0% { transform: translateX(0%); }
-  50% {transform: translateX(-50%);}
-  100% { transform: translateX(-50%); }
-}*/
 
 h2 {
   text-align: left;
