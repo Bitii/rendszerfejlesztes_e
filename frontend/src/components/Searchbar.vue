@@ -66,12 +66,6 @@ const goToMovie = (id) =>
 </template>
 
 <style scoped>
-.test {
-    background-color: var(--yellow);
-    width: 100px;
-    height: 10px;
-    color: black;
-}
 
 input {
     padding: 10px;
@@ -87,7 +81,7 @@ input:focus {
 
 .search-result {
     position: absolute;
-    margin-top: 1rem;
+    margin-top: 3.2rem;
     background-color: var(--white);
     color: var(--black);
     padding: 1rem;
@@ -95,6 +89,7 @@ input:focus {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-height: 400px;
     overflow-y: auto;
+    z-index: 9999;
 }
 
 li {

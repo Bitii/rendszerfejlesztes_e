@@ -19,7 +19,7 @@ const dropDown = () =>
   <!-- Egyetlen gyökérelem lehet csak -->
   <div id="app">
     <header>
-      <a href="/"><img :src="logo" alt="logo"/></a>
+      <a href="/"><img class="logo" :src="logo" alt="logo"/></a>
       <div class="topnav">
         <button @click=dropDown>Menu</button>
         <div id="myDropdown" class="dropdown-content" :style="{ display: dropdownVisible ? 'block' : 'none' }">
@@ -149,7 +149,7 @@ header {
   padding: 40px 40px;
 }
 
-header img {
+.logo {
   width: 80px;
   height: 80px;
   position: absolute;
