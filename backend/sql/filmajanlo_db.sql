@@ -8,29 +8,31 @@ CREATE TABLE kategoriak (
 );
 
 -- studio tábla
-CREATE TABLE studio (
+CREATE TABLE studiok (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nev VARCHAR(255) NOT NULL
 );
 
 -- szinesz tábla
-CREATE TABLE szinesz (
+CREATE TABLE szineszek (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nev VARCHAR(255) NOT NULL,
     ismerteto TEXT,
-    szuldatum DATE
+    szuldatum DATE,
+    profil_kep_url VARCHAR(255)
 );
 
 -- iro tábla
-CREATE TABLE iro (
+CREATE TABLE irok (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nev VARCHAR(255) NOT NULL,
     ismerteto TEXT,
-    szuldatum DATE
+    szuldatum DATE,
+    profil_kep_url_url VARCHAR(255)
 );
 
 -- rendezo tábla
-CREATE TABLE rendezo (
+CREATE TABLE rendezok (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nev VARCHAR(255) NOT NULL,
     ismerteto TEXT,
@@ -50,10 +52,10 @@ CREATE TABLE filmek (
     boritokep_url VARCHAR(255),
     link_netflix VARCHAR(255),
     link_hbo VARCHAR(255),
-    FOREIGN KEY (rendezo_id) REFERENCES rendezo(id) ON DELETE SET NULL,
-    FOREIGN KEY (iro_id) REFERENCES iro(id) ON DELETE SET NULL,
+    FOREIGN KEY (rendezo_id) REFERENCES rendezok(id) ON DELETE SET NULL,
+    FOREIGN KEY (iro_id) REFERENCES irok(id) ON DELETE SET NULL,
     FOREIGN KEY (kategoria_id) REFERENCES kategoriak(id) ON DELETE SET NULL,
-    FOREIGN KEY (studio_id) REFERENCES studio(id) ON DELETE SET NULL
+    FOREIGN KEY (studio_id) REFERENCES studiok(id) ON DELETE SET NULL
 );
 
 -- sorozatok tábla
@@ -69,10 +71,10 @@ CREATE TABLE sorozatok (
     boritokep_url VARCHAR(255),
     link_netflix VARCHAR(255),
     link_hbo VARCHAR(255),
-    FOREIGN KEY (rendezo_id) REFERENCES rendezo(id) ON DELETE SET NULL,
-    FOREIGN KEY (iro_id) REFERENCES iro(id) ON DELETE SET NULL,
+    FOREIGN KEY (rendezo_id) REFERENCES rendezok(id) ON DELETE SET NULL,
+    FOREIGN KEY (iro_id) REFERENCES irok(id) ON DELETE SET NULL,
     FOREIGN KEY (kategoria_id) REFERENCES kategoriak(id) ON DELETE SET NULL,
-    FOREIGN KEY (studio_id) REFERENCES studio(id) ON DELETE SET NULL
+    FOREIGN KEY (studio_id) REFERENCES studiok(id) ON DELETE SET NULL
 );
 
 -- felhasznalok tábla
@@ -81,7 +83,7 @@ CREATE TABLE felhasznalok (
     nev VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     jelszo VARCHAR(255) NOT NULL,
-    profil_kep VARCHAR(255),
+    profil_kep_url VARCHAR(255),
     regisztracios_datum DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -96,19 +98,19 @@ CREATE TABLE velemenyek (
 );
 
 -- kapcsoló tábla: film-szinesz
-CREATE TABLE film_szinesz (
+CREATE TABLE film_szineszek (
     film_id INT,
     szinesz_id INT,
     PRIMARY KEY (film_id, szinesz_id),
     FOREIGN KEY (film_id) REFERENCES filmek(id) ON DELETE CASCADE,
-    FOREIGN KEY (szinesz_id) REFERENCES szinesz(id) ON DELETE CASCADE
+    FOREIGN KEY (szinesz_id) REFERENCES szineszek(id) ON DELETE CASCADE
 );
 
 -- kapcsoló tábla: sorozat-szinesz
-CREATE TABLE sorozat_szinesz (
+CREATE TABLE sorozat_szineszek (
     sorozat_id INT,
     szinesz_id INT,
     PRIMARY KEY (sorozat_id, szinesz_id),
     FOREIGN KEY (sorozat_id) REFERENCES sorozatok(id) ON DELETE CASCADE,
-    FOREIGN KEY (szinesz_id) REFERENCES szinesz(id) ON DELETE CASCADE
+    FOREIGN KEY (szinesz_id) REFERENCES szineszek(id) ON DELETE CASCADE
 );
