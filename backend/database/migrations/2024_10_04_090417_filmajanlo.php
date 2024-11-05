@@ -11,112 +11,89 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // felhasznalok tábla
         Schema::create('felhasznalok', function (Blueprint $table) {
             $table->id();
             $table->string('nev', 255);
             $table->string('email', 255)->unique();
             $table->string('jelszo', 255);
-            $table->string('profil_kep', 255)->nullable();
+            $table->string('profilkep_url', 255)->nullable();
             $table->timestamp('regisztracios_datum')->useCurrent();
         });
 
+        // kategoriak tábla
         Schema::create('kategoriak', function (Blueprint $table) {
             $table->id();
-            $table->string('nev', 255);
+            $table->string('nev', 255)->unique();
         });
 
-        Schema::create('studio', function (Blueprint $table) {
+        // studiok tábla
+        Schema::create('studiok', function (Blueprint $table) {
             $table->id();
-            $table->string('nev', 255);
+            $table->string('nev', 255)->unique();
         });
 
-        Schema::create('szinesz', function (Blueprint $table) {
+        // szemelyek tábla (általános tábla színészeknek, íróknak, rendezőknek)
+        Schema::create('szemelyek', function (Blueprint $table) {
             $table->id();
             $table->string('nev', 255);
-            $table->text('ismerteto');
-            $table->date('szuldatum');
+            $table->text('ismerteto')->nullable();
+            $table->date('szuldatum')->nullable();
+            $table->string('profilkep_url', 255)->nullable();
         });
 
-        Schema::create('iro', function (Blueprint $table) {
-            $table->id();
-            $table->string('nev', 255);
-            $table->text('ismerteto');
-            $table->date('szuldatum');
+        // szemely_tipusok kapcsoló tábla
+        Schema::create('szemely_tipusok', function (Blueprint $table) {
+            $table->foreignId('szemely_id')->constrained('szemelyek')->onDelete('cascade');
+            $table->enum('tipus', ['szinesz', 'iro', 'rendezo']);
+            $table->primary(['szemely_id', 'tipus']);
         });
 
-        Schema::create('rendezo', function (Blueprint $table) {
+        // muvek (alaptábla filmeknek és sorozatoknak)
+        Schema::create('muvek', function (Blueprint $table) {
             $table->id();
-            $table->string('nev', 255);
-            $table->text('ismerteto');
-            $table->date('szuldatum');
-        });
-
-        Schema::create('filmek', function (Blueprint $table) {
-            $table->id();
+            $table->enum('tipus', ['film', 'sorozat']);
             $table->string('cim', 255);
+            $table->foreignId('rendezo_id')->nullable()->constrained('szemelyek')->onDelete('set null');
+            $table->foreignId('iro_id')->nullable()->constrained('szemelyek')->onDelete('set null');
+            $table->foreignId('kategoria_id')->nullable()->constrained('kategoriak')->onDelete('set null');
+            $table->foreignId('studio_id')->nullable()->constrained('studiok')->onDelete('set null');
             $table->text('leiras');
             $table->year('kiadasi_ev');
             $table->string('boritokep_url', 255);
             $table->string('link_netflix', 255);
             $table->string('link_hbo', 255);
-            $table->foreignId('rendezo_id')->constrained('rendezo');
-            $table->foreignId('iro_id')->constrained('iro');
-            $table->foreignId('kategoriak_id')->constrained('kategoriak');
-            $table->foreignId('studio_id')->constrained('studio');
         });
 
-        Schema::create('sorozatok', function (Blueprint $table) {
+        // velemenyek tábla
+        Schema::create('velemenyek', function (Blueprint $table) {
             $table->id();
-            $table->string('cim', 255);
-            $table->text('leiras');
-            $table->year('kiadasi_ev');
-            $table->string('boritokep_url', 255);
-            $table->string('link_netflix', 255);
-            $table->string('link_hbo', 255);
-            $table->foreignId('rendezo_id')->constrained('rendezo');
-            $table->foreignId('iro_id')->constrained('iro');
-            $table->foreignId('kategoriak_id')->constrained('kategoriak');
-            $table->foreignId('studio_id')->constrained('studio');
-        });
-
-        Schema::create('velemeny', function (Blueprint $table) {
-            $table->id();
+            $table->foreignId('felhasznalo_id')->constrained('felhasznalok')->onDelete('cascade');
+            $table->foreignId('mu_id')->constrained('muvek')->onDelete('cascade');
             $table->text('velemeny');
-            $table->timestamp('datum');
-            $table->foreignId('felhasznalo_id')->constrained('felhasznalok');
-            $table->foreignId('film_id')->nullable()->constrained('filmek');
-            $table->foreignId('sorozat_id')->nullable()->constrained('sorozatok');
+            $table->timestamp('datum')->useCurrent();
         });
 
-        Schema::create('film_szinesz', function (Blueprint $table) {
-            $table->foreignId('film_id')->constrained('filmek');
-            $table->foreignId('szinesz_id')->constrained('szinesz');
-            $table->primary(['film_id', 'szinesz_id']);
-        });
-
-        Schema::create('sorozat_szinesz', function (Blueprint $table) {
-            $table->foreignId('sorozat_id')->constrained('sorozatok');
-            $table->foreignId('szinesz_id')->constrained('szinesz');
-            $table->primary(['sorozat_id', 'szinesz_id']);
+        // mu_szineszek kapcsoló tábla
+        Schema::create('mu_szineszek', function (Blueprint $table) {
+            $table->foreignId('mu_id')->constrained('muvek')->onDelete('cascade');
+            $table->foreignId('szinesz_id')->constrained('szemelyek')->onDelete('cascade');
+            $table->primary(['mu_id', 'szinesz_id']);
         });
     }
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('felhasznalok');
+        Schema::dropIfExists('mu_szineszek');
+        Schema::dropIfExists('velemenyek');
+        Schema::dropIfExists('muvek');
+        Schema::dropIfExists('szemely_tipusok');
+        Schema::dropIfExists('szemelyek');
+        Schema::dropIfExists('studiok');
         Schema::dropIfExists('kategoriak');
-        Schema::dropIfExists('studio');
-        Schema::dropIfExists('szinesz');
-        Schema::dropIfExists('iro');
-        Schema::dropIfExists('rendezo');
-        Schema::dropIfExists('filmek');
-        Schema::dropIfExists('sorozatok');
-        Schema::dropIfExists('velemeny');
-        Schema::dropIfExists('film_szinesz');
-        Schema::dropIfExists('sorozat_szinesz');
+        Schema::dropIfExists('felhasznalok');
     }
 };

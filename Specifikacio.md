@@ -44,13 +44,8 @@ A projekt további célja, hogy a felhasználók számára teljes körű adminis
   - Felhasználói profil
   - Mentett filmek, sorozatok
   - Kedvencek
-- **Tartalomkezelő felhasználó**:
-  - Tartalomkezelés
-- **Admin**:
-  - Felhasználókezelés
 
 ### Frontend
-
 CSS és a Bootstrap keretrendszer által nyújtott layout és komponensek használata. 
 
 1. **Főoldal**
