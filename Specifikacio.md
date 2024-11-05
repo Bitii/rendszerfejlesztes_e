@@ -25,21 +25,9 @@ A projekt további célja, hogy a felhasználók számára teljes körű adminis
      - Szerkesztheti és törölheti saját véleményeit.
      - Személyes profilt hozhat létre és kezelheti fiókadatait (név, e-mail, jelszó, profilkép).
 
-3. **Tartalomkezelő Felhasználó**:
-   - **Jogosultságok**:
-     - Új filmeket és sorozatokat, stúdiókat, rendezőket, írókat és kategóriákat adhat hozzá az adatbázishoz.
-     - Moderálhatja a felhasználói véleményeket és szükség esetén törölheti azokat.
-     - Kezelheti a felhasználók által beküldött hibajelentéseket és javaslatokat.
-
-4. **Adminisztrátor**:
-   - **Jogosultságok**:
-     - Teljes hozzáféréssel rendelkezik az oldal összes funkciójához és adatához.
-     - Felhasználói jogosultságokat állíthat be, új tartalomkezelőket és adminokat hozhat létre.
-
 ## 2. Szerepkörök Felosztása
 
 - **Frontend tervező/fejlesztő**: Tervezés hangsúly, HTML, (Bootstrap), CSS, Vue.js alapú frontend komponensek készítése.
-- **Frontend fejlesztő**: HTML, (Bootstrap), CSS, Vue.js alapú frontend komponensek készítése.
 - **Backend fejlesztő**: PHP alapú backend fejlesztés, adatbázis kezelés.
 - **Fullstack fejlesztő**: Frontend és backend fejlesztés kombinációja, valamint dokumentáció és prezentáció készítése.
 
