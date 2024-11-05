@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router"; // Vue Router import atiranyitashoz
 import axios from "axios";
 
 //  Importok a kepekhez
@@ -7,11 +8,14 @@ import bunny from "@/assets/default_profile_pics/bunny.png";
 import fatbunny from "@/assets/default_profile_pics/fatbunny.png";
 import oops from "@/assets/default_profile_pics/oops.png";
 
-// Alapértelmezett profilkepek (listaja)
+// Alapertelmezett profilkepek (listaja)
 const defaultPics = [bunny, fatbunny, oops];
-const defaultPic = defaultPics[Math.floor(Math.random() * defaultPics.length)]; // Véletlenszerű alapértelmezett kép
+const defaultPic = defaultPics[Math.floor(Math.random() * defaultPics.length)]; // Random default kep
 
-// Ref-ek a form inputokhoz es a profilkephez
+// Router, atiranyitashoz
+const router = useRouter();
+
+// Ref-ek a form inputokhoz és a profilképhez
 const email = ref("");
 const nev = ref("");
 const jelszo = ref("");
@@ -20,25 +24,25 @@ const error = ref("");
 const profilePicture = ref(null);
 const previewSrc = ref("");
 
-// Az oldal betoltese utan beallitja az alapertelmezett kepet
+// Az oldal betoltese utan beallítja az alapertelmezett kepet
 onMounted(() => {
   previewSrc.value = defaultPic;
 });
 
-// Fuggveny a kep feltoltesere es elonezet mutatasara
+// Függveny a kep feltoltesere + preview
 const handleFileChange = (event) => {
   const file = event.target.files[0];
   if (file) {
     profilePicture.value = file;
     const reader = new FileReader();
     reader.onload = () => {
-      previewSrc.value = reader.result; // Feltoltott kep elonezet beallitasa
+      previewSrc.value = reader.result;
     };
     reader.readAsDataURL(file);
   }
 };
 
-// Regisztracios fuggveny az adatok elkuldesere
+// Regisztrációs függvény az adatok elküldésére
 const register = () => {
   if (!email.value || !nev.value || !jelszo.value || !jelszo2.value) {
     error.value = "Tölts ki minden mezőt!";
@@ -49,16 +53,16 @@ const register = () => {
     return;
   }
 
-  // FormData letrehozasa az adatok elkuldesere
+  // FormData létrehozása az adatok elküldésére
   const formData = new FormData();
   formData.append("email", email.value);
   formData.append("nev", nev.value);
   formData.append("jelszo", jelszo.value);
   if (profilePicture.value) {
-    formData.append("profilepic", profilePicture.value); // Ha van feltoltott kep, hozzaadasa a FormData-hoz
+    formData.append("profilepic", profilePicture.value); // Ha van feltöltött kép, hozzáadása a FormData-hoz
   }
 
-  // Adatok elkuldese axios-al
+  // Adatok elküldése axios-szal
   axios
     .post("http://localhost:8000/api/users/register", formData, {
       headers: {
@@ -67,12 +71,14 @@ const register = () => {
     })
     .then((resp) => {
       console.log(resp.data); // Valasz kiiratasa a konzolra sikeres regisztracio eseten
+      router.push("/"); // Atirányitas a Fooldalra (?lehetne bejelentkezesi oldalra is)
     })
     .catch((err) => {
-      error.value = "Hiba a regisztráció során!"; // Hiba uzenet beallitasa
+      error.value = "Hiba a regisztráció során!"; // Hiba üzenet beállítása
     });
 };
 </script>
+
 
 <template>
   <main>
