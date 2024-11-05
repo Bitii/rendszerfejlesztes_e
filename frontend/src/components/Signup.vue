@@ -71,7 +71,7 @@ const register = () =>
         </div>
         <input type="submit" class="btn" value="Create account" />
       </form>
-      <p class="already">Already have an account? <a href="/signin">sign in</a></p>
+      <p class="already">Already have an account? <router-link to="/signin">sign in</router-link></p>
     </div>
   </div>
   </main>

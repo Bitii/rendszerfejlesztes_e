@@ -48,7 +48,7 @@ const login = () => {
         </div>
         <input type="submit" class="btn" value="Sign in" />
         <div id="separator"><span>  or  </span></div>
-        <input type="button" class="btn" value="Create a new account" /> <!-- még nem irányít át a regisztrálós oldalra -->
+        <input type="button" class="btn" value="Create a new account" @click="$router.push('/signup')"/>
       </form>
     </div>
   </main>
