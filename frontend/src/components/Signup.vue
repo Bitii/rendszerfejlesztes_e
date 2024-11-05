@@ -1,79 +1,118 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import axios from "axios";
+
+//  Importok a kepekhez
+import bunny from "@/assets/default_profile_pics/bunny.png";
+import fatbunny from "@/assets/default_profile_pics/fatbunny.png";
+import oops from "@/assets/default_profile_pics/oops.png";
+
+// Alapértelmezett profilkepek (listaja)
+const defaultPics = [bunny, fatbunny, oops];
+const defaultPic = defaultPics[Math.floor(Math.random() * defaultPics.length)]; // Véletlenszerű alapértelmezett kép
+
+// Ref-ek a form inputokhoz es a profilkephez
 const email = ref("");
 const nev = ref("");
 const jelszo = ref("");
 const jelszo2 = ref("");
 const error = ref("");
+const profilePicture = ref(null);
+const previewSrc = ref("");
 
-const register = () =>
-{
-  if (!email.value || !nev.value || !jelszo.value || !jelszo2.value)
-  {
+// Az oldal betoltese utan beallitja az alapertelmezett kepet
+onMounted(() => {
+  previewSrc.value = defaultPic;
+});
+
+// Fuggveny a kep feltoltesere es elonezet mutatasara
+const handleFileChange = (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    profilePicture.value = file;
+    const reader = new FileReader();
+    reader.onload = () => {
+      previewSrc.value = reader.result; // Feltoltott kep elonezet beallitasa
+    };
+    reader.readAsDataURL(file);
+  }
+};
+
+// Regisztracios fuggveny az adatok elkuldesere
+const register = () => {
+  if (!email.value || !nev.value || !jelszo.value || !jelszo2.value) {
     error.value = "Tölts ki minden mezőt!";
     return;
   }
-  if (jelszo.value != jelszo2.value)
-  {
+  if (jelszo.value !== jelszo2.value) {
     error.value = "A két jelszó nem egyezik!";
     return;
   }
 
+  // FormData letrehozasa az adatok elkuldesere
+  const formData = new FormData();
+  formData.append("email", email.value);
+  formData.append("nev", nev.value);
+  formData.append("jelszo", jelszo.value);
+  if (profilePicture.value) {
+    formData.append("profilepic", profilePicture.value); // Ha van feltoltott kep, hozzaadasa a FormData-hoz
+  }
+
+  // Adatok elkuldese axios-al
   axios
-    .post("http://localhost:8000/api/users/register", {
-      email: email.value,
-      nev: nev.value,
-      jelszo: jelszo.value,
-    }).then((resp) =>
-    {
-      console.log(resp.data);
-    }).catch((err) =>
-    {
-      error.value = "Hiba a regisztráció során!";
+    .post("http://localhost:8000/api/users/register", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+    .then((resp) => {
+      console.log(resp.data); // Valasz kiiratasa a konzolra sikeres regisztracio eseten
+    })
+    .catch((err) => {
+      error.value = "Hiba a regisztráció során!"; // Hiba uzenet beallitasa
     });
-}
+};
 </script>
 
 <template>
   <main>
-  <div id="main-div">
-    <div class="form-container">
-      <form @submit.prevent="register" id="signup" class="sign-up-form">
-        <h2 class="title">Create your account</h2>
-        {{ error }}
-        <label for="email">Email address</label>
-        <div class="input-field">
-          <input type="email" required v-model="email" />
-        </div>
-        <label for="username">Username</label>
-        <div class="input-field">
-          <input type="text" required v-model="nev" />
-        </div>
-        <label for="password">Password</label>
-        <div class="input-field">
-          <input type="password" required v-model="jelszo" />
-        </div>
-        <label for="repassword">Re-enter password</label>
-        <div class="input-field">
-          <input type="password" required v-model="jelszo2" />
-        </div>
-        <!-- profilkép feltöltés -->
-        <p class="upload-pic-text">Upload your profile picture:<br />(optional)</p>
-        <div class="profilepic">
-          <div class="img-holder">
-            <img src="" id="img" alt="profile picture" />
+    <div id="main-div">
+      <div class="form-container">
+        <form @submit.prevent="register" id="signup" class="sign-up-form">
+          <h2 class="title">Create your account</h2>
+          {{ error }}
+          <label for="email">Email address</label>
+          <div class="input-field">
+            <input type="email" required v-model="email" />
           </div>
-          <div>
-            <label for="profilepic">Upload picture</label>
-            <input type="file" id="profilepic" name="profilepic" accept="image/*" />
+          <label for="username">Username</label>
+          <div class="input-field">
+            <input type="text" required v-model="nev" />
           </div>
-        </div>
-        <input type="submit" class="btn" value="Create account" />
-      </form>
-      <p class="already">Already have an account? <router-link to="/signin">sign in</router-link></p>
+          <label for="password">Password</label>
+          <div class="input-field">
+            <input type="password" required v-model="jelszo" />
+          </div>
+          <label for="repassword">Re-enter password</label>
+          <div class="input-field">
+            <input type="password" required v-model="jelszo2" />
+          </div>
+          <!-- Profilkep feltoltes -->
+          <p class="upload-pic-text">Upload your profile picture:<br />(optional)</p>
+          <div class="profilepic">
+            <div class="img-holder">
+              <img :src="previewSrc" id="img" alt="profile picture" />
+            </div>
+            <div>
+              <label for="profilepic" class="upload-button">Upload picture</label>
+              <input type="file" id="profilepic" name="profilepic" accept="image/*" @change="handleFileChange" />
+            </div>
+          </div>
+          <input type="submit" class="btn" value="Create account" />
+        </form>
+        <p class="already">Already have an account? <router-link to="/signin">sign in</router-link></p>
+      </div>
     </div>
-  </div>
   </main>
 </template>
 
@@ -136,13 +175,6 @@ label {
   padding: 0 10px;
 }
 
-label {
-  color: var(--white);
-  font-size: 1.2rem;
-  position: relative;
-  top: 1.4rem;
-}
-
 .btn {
   width: fit-content;
   background-color: var(--blue);
@@ -194,7 +226,17 @@ label {
   gap: 10px;
 }
 
-p{
+.upload-button {
+  background-color: var(--blue);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+p {
   text-align: left;
 }
 
@@ -222,6 +264,4 @@ p{
 .upload-pic-text {
   margin-top: 2rem;
 }
-
-
 </style>
