@@ -97,16 +97,25 @@ CSS és a Bootstrap keretrendszer által nyújtott layout és komponensek haszn�
 
 ### Backend
 
-1. **Adatbázis Tervezés (SQL)**
-   - **Filmek tábla**: `id`, `cim`, `rendezo_id`, `iro_id`, `kategoria_id`, `studio_id`, `leiras`, `kiadasi_ev`, `boritokep_url`, `link_netflix`, `link_hbo`
-   - **Sorozatok tábla**: `id`, `cim`, `rendezo_id`, `iro_id`, `kategoria_id`, `studio_id`, `leiras`, `kiadasi_ev`, `boritokep_url`, `link_netflix`, `link_hbo`
-   - **Kategoriak tábla**: `id`, `nev`.
-   - **Szinesz tábla**: `id`, `nev`, `ismerteto`, `szuldatum`
-   - **Iro tábla**: `id`, `nev`, `ismerteto`, `szuldatum`
-   - **Rendezo tábla**: `id`, `nev`, `ismerteto`, `szuldatum`
-   - **Studio tábla**: `id`, `nev`.
-   - **Felhasznalok tábla**: `id`, `nev`, `email`, `jelszo`, `profil_kep`, `regisztracios_datum`.
-   - **Velemenyek tábla**: `id`, `felhasznalo_id`, `mu_id`, `velemeny`, `datum`.
+# Adatbázis Tervezés (SQL)
+1. **Muvek tábla**
+   - Oszlopok: `id`, `tipus` (ENUM: 'film', 'sorozat'), `cim`, `rendezo_id`, `iro_id`, `kategoria_id`, `studio_id`, `leiras`, `kiadasi_ev`, `boritokep_url`, `link_netflix`, `link_hbo`
+2. **Kategoriak tábla**
+   - Oszlopok: `id`, `nev`
+3. **Szemelyek tábla**
+   - Oszlopok: `id`, `nev`, `ismerteto`, `szuldatum`, `profilkep_url`
+4. **Szemely_tipusok tábla**
+   - Oszlopok: `szemely_id`, `tipus` (ENUM: 'szinesz', 'iro', 'rendezo')
+5. **Studiok tábla**
+   - Oszlopok: `id`, `nev`
+6. **Felhasznalok tábla**
+   - Oszlopok: `id`, `nev`, `email`, `jelszo`, `profilkep_url`, `regisztracios_datum`
+7. **Velemenyek tábla**
+   - Oszlopok: `id`, `felhasznalo_id`, `mu_id`, `velemeny`, `datum`
+8. **Mu_szineszek tábla**
+   - Oszlopok: `mu_id`, `szinesz_id`
+9. **Ertekelesek tábla**
+   - Oszlopok: `id`, `felhasznalo_id`, `mu_id`, `ertekeles
 
 2. **Backend Logika (PHP)**
    - **Regisztráció és bejelentkezés**: PHP session kezelés, jelszavak biztonságos tárolása hash-eléssel.
