@@ -5,12 +5,15 @@ import placeholderImage from "@/assets/placeholder.jpg"; // Pelda film/sorozat k
 import profilePicture from "@/assets/profile.jpg"; // Pelda profil-kep
 
 // Felhasznalo informacio
+const userData = useUserStore();
 const username = ref('username_123');
 const email = ref('email@email.com');
 const password = ref('password1234');
 const registrationDate = ref('YYYY-MM-DD');
-const userData = useUserStore();
 
+username.value = userData.user.nev;
+email.value = userData.user.email;
+registrationDate.value = userData.user.regisztracios_datum;
 
 // Felhasznalo adatai: kedvencek, latottak, nezesi lista...
 const favorites = ref([]);

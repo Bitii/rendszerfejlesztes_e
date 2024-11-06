@@ -15,7 +15,7 @@ const dropDown = (hide = false) =>
   <!-- Egyetlen gyökérelem lehet csak -->
   <div id="app">
     <header>
-      <a href="/"><img class="logo" :src="logo" alt="logo" /></a>
+      <RouterLink to="/"><img class="logo" :src="logo" alt="logo" /></RouterLink>
       <div class="topnav">
         <button @click=dropDown()>Menu</button>
         <div id="myDropdown" class="dropdown-content" :style="{ display: dropdownVisible ? 'block' : 'none' }">
