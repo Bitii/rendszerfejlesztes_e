@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
+import { useUserStore } from '../../stores/user';
 import placeholderImage from "@/assets/placeholder.jpg"; // Pelda film/sorozat kep
 import profilePicture from "@/assets/profile.jpg"; // Pelda profil-kep
 
@@ -8,6 +9,8 @@ const username = ref('username_123');
 const email = ref('email@email.com');
 const password = ref('password1234');
 const registrationDate = ref('YYYY-MM-DD');
+const userData = useUserStore();
+
 
 // Felhasznalo adatai: kedvencek, latottak, nezesi lista...
 const favorites = ref([]);

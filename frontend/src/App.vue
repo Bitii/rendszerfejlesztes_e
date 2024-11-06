@@ -2,16 +2,12 @@
 import logo from '@/assets/logo.svg';
 import { ref } from 'vue';
 import Searchbar from './components/Searchbar.vue';
+import { RouterLink } from 'vue-router';
 
 const dropdownVisible = ref(false);
-
-const goHome = () => {
-  router.push('/');
-};
-
-const dropDown = () =>
+const dropDown = (hide = false) =>
 {
-  dropdownVisible.value = !dropdownVisible.value;
+  dropdownVisible.value = hide ? false : !dropdownVisible.value;
 };
 </script>
 
@@ -19,14 +15,14 @@ const dropDown = () =>
   <!-- Egyetlen gyökérelem lehet csak -->
   <div id="app">
     <header>
-      <a href="/"><img class="logo" :src="logo" alt="logo"/></a>
+      <a href="/"><img class="logo" :src="logo" alt="logo" /></a>
       <div class="topnav">
-        <button @click=dropDown>Menu</button>
+        <button @click=dropDown()>Menu</button>
         <div id="myDropdown" class="dropdown-content" :style="{ display: dropdownVisible ? 'block' : 'none' }">
-          <a class="active" href="/">Home</a>
-          <a href="/signup">Sign Up</a>
-          <a href="/signin">Sign In</a>
-          <a href="/user">User</a>
+            <RouterLink @click="dropDown(true)" to="/">Home</RouterLink>
+            <RouterLink @click="dropDown(true)" to="/signup">Sign Up</RouterLink>
+            <RouterLink @click="dropDown(true)" to="/signin">Sign In</RouterLink>
+            <RouterLink @click="dropDown(true)" to="/user">User</RouterLink>
         </div>
         <Searchbar /> <!-- Searchbar komponens megjelenítése -->
       </div>
@@ -42,7 +38,7 @@ const dropDown = () =>
       <a href="https://www.facebook.com"><img src="./assets/facebook.png" alt="facebook" /></a>
       <a href="https://www.instagram.com"><img src="./assets/instagram.png" alt="instagram" /></a>
       <a href="https://www.twitter.com"><img src="./assets/twitter.png" alt="twitter" /></a>
-      <p>&copy; 2021</p>
+      <p>&copy; 2024</p>
     </footer>
   </div>
 </template>

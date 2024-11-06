@@ -9,28 +9,21 @@ const loginURL = "http://127.0.0.1:8000/api/users/login";
 const email = ref("");
 const password = ref("");
 const error = ref("");
-const user = ref({});
 const userData = useUserStore();
 
-/* BEJELENTKEZÉS */
-const login = async () =>
-{
-  if (!email.value || !password.value)
-  {
+const login = async () => {
+  if (!email.value || !password.value) { // mezők ellenőrzése
     error.value = "Töltsd ki az összes mezőt!";
     return;
   }
-  try
-  {
-    let resp = await axios.post(loginURL, {
+  try {
+    let resp = await axios.post(loginURL, { // bejelentkezési adatok küldése
       email: email.value,
       jelszo: password.value,
     });
-    userData.user = resp.data.user;
-    /* console.log(userData.user); */ // teszteléshez
-    router.push("/");
-  } catch (err)
-  {
+    userData.user = resp.data.user; // user store-ba mentés
+    router.push("/"); // visszairányítás a főoldalra
+  } catch (err) { // hiba esetén hibaüzenet megjelenítése
     error.value = "Hibás email vagy jelszó!";
     console.log(err);
   }
