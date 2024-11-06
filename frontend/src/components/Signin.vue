@@ -3,31 +3,37 @@
 import { ref } from "vue";
 import axios from "axios";
 import router from "../router";
+import { useUserStore } from "../../stores/user";
 
+const loginURL = "http://127.0.0.1:8000/api/users/login";
 const email = ref("");
 const password = ref("");
 const error = ref("");
 const user = ref({});
+const userData = useUserStore();
 
 /* BEJELENTKEZÉS */
-const login = () => {
-  if (!email.value || !password.value) {
+const login = async () =>
+{
+  if (!email.value || !password.value)
+  {
     error.value = "Töltsd ki az összes mezőt!";
     return;
   }
-
-  axios
-    .post("http://127.0.0.1:8000/api/users/login", {
+  try
+  {
+    let resp = await axios.post(loginURL, {
       email: email.value,
       jelszo: password.value,
-    })
-    .then((resp) => {
-      user.value = resp.data.user;
-      user.token = resp.data.user.token;
-      console.log(user.value, user.token);
-      router.push("/");
-    })
-    .catch((err) => (error.value = "Hibás email vagy jelszó!"));
+    });
+    userData.user = resp.data.user;
+    /* console.log(userData.user); */ // teszteléshez
+    router.push("/");
+  } catch (err)
+  {
+    error.value = "Hibás email vagy jelszó!";
+    console.log(err);
+  }
 };
 </script>
 
@@ -47,8 +53,8 @@ const login = () => {
           <input type="password" required v-model="password" />
         </div>
         <input type="submit" class="btn" value="Sign in" />
-        <div id="separator"><span>  or  </span></div>
-        <input type="button" class="btn" value="Create a new account" @click="$router.push('/signup')"/>
+        <div id="separator"><span> or </span></div>
+        <input type="button" class="btn" value="Create a new account" @click="$router.push('/signup')" />
       </form>
     </div>
   </main>
@@ -69,6 +75,7 @@ form {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
+
 .sign-in-form {
   border: #333 solid 5px;
   min-width: 350px;
@@ -76,6 +83,7 @@ form {
   padding-bottom: 1rem;
   margin-top: auto;
 }
+
 .form-container {
   display: grid;
   grid-template-columns: 350px;
@@ -84,6 +92,7 @@ form {
   height: 60vh;
   margin-bottom: 10rem;
 }
+
 label {
   color: var(--white);
   font-size: 1.2rem;
@@ -111,6 +120,7 @@ label {
   height: 100%;
   padding: 0 10px;
 }
+
 .btn {
   width: fit-content;
   background-color: var(--blue);
@@ -139,7 +149,7 @@ label {
   display: flex;
 }
 
-#separator::before{
+#separator::before {
   content: '';
   display: block;
   min-width: 170px;
@@ -150,6 +160,7 @@ label {
   background: #deb522;
   z-index: -20;
 }
+
 #separator::after {
   content: '';
   display: block;
@@ -161,6 +172,7 @@ label {
   background: #deb522;
   z-index: -20;
 }
+
 span {
   background-color: var(--black);
   padding-left: 10px;

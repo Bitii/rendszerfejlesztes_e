@@ -4,7 +4,7 @@ import { ref, reactive } from "vue";
 import { useRouter } from "vue-router";
 import { useMovieStore } from '../../stores/movie'; //importáljuk a store-t
 
-const TMDBapi = "https://api.themoviedb.org/3/search/movie" //api kulcs - omdbapi.com
+const TMDBapi = "https://api.themoviedb.org/3/search/movie" //api kulcs - tmdbapi.com
 const apiKey = "83e8713d6dfc87ac2ec4a2da58f338cd"; //api kulcs
 const img = "https://image.tmdb.org/t/p/original"; //kép url
 const searchBar = ref("");
@@ -21,7 +21,7 @@ const search = async () =>
         const response = await axios.get(TMDBapi, {
             params: {
                 api_key: apiKey, //api kulcs
-                query: searchBar.value, //kereső mező értéke, az api leíratában s: kulcs
+                query: searchBar.value, //kereső mező értéke, amit a felhasználó beírt
                 language: 'hu-HU',
             }
         });
