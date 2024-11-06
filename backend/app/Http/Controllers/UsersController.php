@@ -64,4 +64,21 @@ class UsersController extends Controller
             'user' => $user,
         ]);
     }
+
+    public function logout(Request $request)
+    {
+        // ellerőrizni, hogy van-e bejelentkezett user
+        if ($request->user()) {
+            // token törlése
+            $request->user()->tokens()->delete();
+
+            return response([
+                'message' => 'Logged out successfully'
+            ], 200);
+        }
+            // ha nincs bejelentkezett user
+        return response([
+            'message' => 'No authenticated user found'
+        ], 401);
+    }
 }
