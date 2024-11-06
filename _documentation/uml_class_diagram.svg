@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="844px" preserveAspectRatio="none" style="width:1509px;height:844px;background:#FFFFFF;" version="1.1" viewBox="0 0 1509 844" width="1509px" zoomAndPan="magnify"><defs/><g><!--MD5=[d422c22f220ec6286ab7a2fdf7455978]
+cluster Signin--><g id="cluster_Signin"><path d="M8.5,6 L57.5,6 A3.75,3.75 0 0 1 60,8.5 L67,28.2969 L145.5,28.2969 A2.5,2.5 0 0 1 148,30.7969 L148,100.5 A2.5,2.5 0 0 1 145.5,103 L8.5,103 A2.5,2.5 0 0 1 6,100.5 L6,8.5 A2.5,2.5 0 0 1 8.5,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="67" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="48" x="10" y="20.9951">Signin</text></g><!--MD5=[a131c90a0385bd2d95ca1cff7f9a365b]
+cluster Signup--><g id="cluster_Signup"><path d="M174.5,6 L229.5,6 A3.75,3.75 0 0 1 232,8.5 L239,28.2969 L319.5,28.2969 A2.5,2.5 0 0 1 322,30.7969 L322,100.5 A2.5,2.5 0 0 1 319.5,103 L174.5,103 A2.5,2.5 0 0 1 172,100.5 L172,8.5 A2.5,2.5 0 0 1 174.5,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="172" x2="239" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="54" x="176" y="20.9951">Signup</text></g><!--MD5=[ab1ecfefeb8533ac146a0c54869d84dd]
+cluster MovieDetail--><g id="cluster_MovieDetail"><path d="M348.5,6 L439.5,6 A3.75,3.75 0 0 1 442,8.5 L449,28.2969 L523.5,28.2969 A2.5,2.5 0 0 1 526,30.7969 L526,100.5 A2.5,2.5 0 0 1 523.5,103 L348.5,103 A2.5,2.5 0 0 1 346,100.5 L346,8.5 A2.5,2.5 0 0 1 348.5,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="346" x2="449" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="90" x="350" y="20.9951">MovieDetail</text></g><!--MD5=[2f5f07988498e697c0d00a92b39fa8c6]
+cluster Searchbar--><g id="cluster_Searchbar"><path d="M674.5,6 L756.5,6 A3.75,3.75 0 0 1 759,8.5 L766,28.2969 L841.5,28.2969 A2.5,2.5 0 0 1 844,30.7969 L844,100.5 A2.5,2.5 0 0 1 841.5,103 L674.5,103 A2.5,2.5 0 0 1 672,100.5 L672,8.5 A2.5,2.5 0 0 1 674.5,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="672" x2="766" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="81" x="676" y="20.9951">Searchbar</text></g><!--MD5=[b9bf2f533358bded5304b66216a4b65e]
+entity Signin.vue--><g id="elem_Signin.vue"><rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="111" x="21.5" y="41"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="112.5" y="46"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="110.5" y="48"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="110.5" y="52"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="36.5" y="73.9951">Signin.vue</text></g><!--MD5=[f1ea38347badc0082a271527ee94a55e]
+entity Signup.vue--><g id="elem_Signup.vue"><rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="117" x="188.5" y="41"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="285.5" y="46"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="283.5" y="48"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="283.5" y="52"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="203.5" y="73.9951">Signup.vue</text></g><!--MD5=[15cf88aa3539469cd4df0e97334207a0]
+entity MovieDetail.vue--><g id="elem_MovieDetail.vue"><rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="148" x="362" y="41"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="490" y="46"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="488" y="48"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="488" y="52"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="377" y="73.9951">MovieDetail.vue</text></g><!--MD5=[e85a3fdb23de99f279fc3c25058efd5e]
+entity Searchbar.vue--><g id="elem_Searchbar.vue"><rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="688.5" y="41"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="807.5" y="46"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="805.5" y="48"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="805.5" y="52"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="703.5" y="73.9951">Searchbar.vue</text></g><!--MD5=[cf9db1cf459c0bf5fadcb49d5c759371]
+class UsersController--><g id="elem_UsersController"><rect codeLine="4" fill="#F1F1F1" height="96.8906" id="UsersController" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="228" x="40" y="197.5"/><ellipse cx="96.25" cy="213.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M99.2188,219.1406 Q98.6406,219.4375 98,219.5781 Q97.3594,219.7344 96.6563,219.7344 Q94.1563,219.7344 92.8281,218.0938 Q91.5156,216.4375 91.5156,213.3125 Q91.5156,210.1875 92.8281,208.5313 Q94.1563,206.875 96.6563,206.875 Q97.3594,206.875 98,207.0313 Q98.6563,207.1875 99.2188,207.4844 L99.2188,210.2031 Q98.5938,209.625 98,209.3594 Q97.4063,209.0781 96.7813,209.0781 Q95.4375,209.0781 94.75,210.1563 Q94.0625,211.2188 94.0625,213.3125 Q94.0625,215.4063 94.75,216.4844 Q95.4375,217.5469 96.7813,217.5469 Q97.4063,217.5469 98,217.2813 Q98.5938,217 99.2188,216.4219 L99.2188,219.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="116.75" y="218.3467">UsersController</text><line style="stroke:#181818;stroke-width:0.5;" x1="41" x2="267" y1="229.5" y2="229.5"/><line style="stroke:#181818;stroke-width:0.5;" x1="41" x2="267" y1="237.5" y2="237.5"/><ellipse cx="51" cy="251.1484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202" x="60" y="254.4951">register(Request): Response</text><ellipse cx="51" cy="267.4453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182" x="60" y="270.792">login(Request): Response</text><ellipse cx="51" cy="283.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="193" x="60" y="287.0889">logout(Request): Response</text></g><!--MD5=[d3ec36d5797c9a8b2fb649fb1b7e461f]
+class MoviesController--><g id="elem_MoviesController"><rect codeLine="10" fill="#F1F1F1" height="113.1875" id="MoviesController" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="259" x="448.5" y="189.5"/><ellipse cx="516.25" cy="205.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M519.2188,211.1406 Q518.6406,211.4375 518,211.5781 Q517.3594,211.7344 516.6563,211.7344 Q514.1563,211.7344 512.8281,210.0938 Q511.5156,208.4375 511.5156,205.3125 Q511.5156,202.1875 512.8281,200.5313 Q514.1563,198.875 516.6563,198.875 Q517.3594,198.875 518,199.0313 Q518.6563,199.1875 519.2188,199.4844 L519.2188,202.2031 Q518.5938,201.625 518,201.3594 Q517.4063,201.0781 516.7813,201.0781 Q515.4375,201.0781 514.75,202.1563 Q514.0625,203.2188 514.0625,205.3125 Q514.0625,207.4063 514.75,208.4844 Q515.4375,209.5469 516.7813,209.5469 Q517.4063,209.5469 518,209.2813 Q518.5938,209 519.2188,208.4219 L519.2188,211.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="536.75" y="210.3467">MoviesController</text><line style="stroke:#181818;stroke-width:0.5;" x1="449.5" x2="706.5" y1="221.5" y2="221.5"/><line style="stroke:#181818;stroke-width:0.5;" x1="449.5" x2="706.5" y1="229.5" y2="229.5"/><ellipse cx="459.5" cy="243.1484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="468.5" y="246.4951">getMovies(Request): Response</text><ellipse cx="459.5" cy="259.4453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="233" x="468.5" y="262.792">getMovieDetails(int id): Response</text><ellipse cx="459.5" cy="275.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="224" x="468.5" y="279.0889">addReview(Request): Response</text><ellipse cx="459.5" cy="292.0391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="468.5" y="295.3857">rateMovie(Request): Response</text></g><!--MD5=[3fd616f346a44cd59a91eb10b19e157c]
+class User--><g id="elem_User"><rect codeLine="18" fill="#F1F1F1" height="145.7813" id="User" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="212" x="887" y="436.5"/><ellipse cx="972.75" cy="452.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M975.7188,458.1406 Q975.1406,458.4375 974.5,458.5781 Q973.8594,458.7344 973.1563,458.7344 Q970.6563,458.7344 969.3281,457.0938 Q968.0156,455.4375 968.0156,452.3125 Q968.0156,449.1875 969.3281,447.5313 Q970.6563,445.875 973.1563,445.875 Q973.8594,445.875 974.5,446.0313 Q975.1563,446.1875 975.7188,446.4844 L975.7188,449.2031 Q975.0938,448.625 974.5,448.3594 Q973.9063,448.0781 973.2813,448.0781 Q971.9375,448.0781 971.25,449.1563 Q970.5625,450.2188 970.5625,452.3125 Q970.5625,454.4063 971.25,455.4844 Q971.9375,456.5469 973.2813,456.5469 Q973.9063,456.5469 974.5,456.2813 Q975.0938,456 975.7188,455.4219 L975.7188,458.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="993.25" y="457.3467">User</text><line style="stroke:#181818;stroke-width:0.5;" x1="888" x2="1098" y1="468.5" y2="468.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="895" y="479.1484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="907" y="485.4951">id: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="895" y="495.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="907" y="501.792">name: string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="895" y="511.7422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="907" y="518.0889">email: string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="895" y="528.0391"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="907" y="534.3857">password: string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="895" y="544.3359"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="907" y="550.6826">profile_picture: string?</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="895" y="560.6328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="907" y="566.9795">registration_date: datetime</text><line style="stroke:#181818;stroke-width:0.5;" x1="888" x2="1098" y1="574.2813" y2="574.2813"/></g><!--MD5=[e69084ab16b022bdbef99762ea85e9d6]
+class Movie--><g id="elem_Movie"><rect codeLine="27" fill="#F1F1F1" height="243.5625" id="Movie" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="185" x="1134.5" y="387.5"/><ellipse cx="1202.75" cy="403.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1205.7188,409.1406 Q1205.1406,409.4375 1204.5,409.5781 Q1203.8594,409.7344 1203.1563,409.7344 Q1200.6563,409.7344 1199.3281,408.0938 Q1198.0156,406.4375 1198.0156,403.3125 Q1198.0156,400.1875 1199.3281,398.5313 Q1200.6563,396.875 1203.1563,396.875 Q1203.8594,396.875 1204.5,397.0313 Q1205.1563,397.1875 1205.7188,397.4844 L1205.7188,400.2031 Q1205.0938,399.625 1204.5,399.3594 Q1203.9063,399.0781 1203.2813,399.0781 Q1201.9375,399.0781 1201.25,400.1563 Q1200.5625,401.2188 1200.5625,403.3125 Q1200.5625,405.4063 1201.25,406.4844 Q1201.9375,407.5469 1203.2813,407.5469 Q1203.9063,407.5469 1204.5,407.2813 Q1205.0938,407 1205.7188,406.4219 L1205.7188,409.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="1223.25" y="408.3467">Movie</text><line style="stroke:#181818;stroke-width:0.5;" x1="1135.5" x2="1318.5" y1="419.5" y2="419.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1142.5" y="430.1484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1154.5" y="436.4951">id: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1142.5" y="446.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="1154.5" y="452.792">type: enum</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1142.5" y="462.7422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="1154.5" y="469.0889">title: string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1142.5" y="479.0391"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="1154.5" y="485.3857">director_id: int?</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1142.5" y="495.3359"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="1154.5" y="501.6826">writer_id: int?</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1142.5" y="511.6328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="1154.5" y="517.9795">category_id: int?</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1142.5" y="527.9297"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="1154.5" y="534.2764">studio_id: int?</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1142.5" y="544.2266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="1154.5" y="550.5732">description: text</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1142.5" y="560.5234"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="1154.5" y="566.8701">release_year: year</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1142.5" y="576.8203"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="1154.5" y="583.167">cover_image_url: string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1142.5" y="593.1172"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="1154.5" y="599.4639">netflix_link: string?</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1142.5" y="609.4141"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="1154.5" y="615.7607">hbo_link: string?</text><line style="stroke:#181818;stroke-width:0.5;" x1="1135.5" x2="1318.5" y1="623.0625" y2="623.0625"/></g><!--MD5=[eb0e8f8ddfdc21c3fdb48447501fec67]
+class Review--><g id="elem_Review"><rect codeLine="42" fill="#F1F1F1" height="129.4844" id="Review" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="138" x="963" y="708.5"/><ellipse cx="1003.65" cy="724.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1006.6188,730.1406 Q1006.0406,730.4375 1005.4,730.5781 Q1004.7594,730.7344 1004.0563,730.7344 Q1001.5563,730.7344 1000.2281,729.0938 Q998.9156,727.4375 998.9156,724.3125 Q998.9156,721.1875 1000.2281,719.5313 Q1001.5563,717.875 1004.0563,717.875 Q1004.7594,717.875 1005.4,718.0313 Q1006.0563,718.1875 1006.6188,718.4844 L1006.6188,721.2031 Q1005.9938,720.625 1005.4,720.3594 Q1004.8063,720.0781 1004.1813,720.0781 Q1002.8375,720.0781 1002.15,721.1563 Q1001.4625,722.2188 1001.4625,724.3125 Q1001.4625,726.4063 1002.15,727.4844 Q1002.8375,728.5469 1004.1813,728.5469 Q1004.8063,728.5469 1005.4,728.2813 Q1005.9938,728 1006.6188,727.4219 L1006.6188,730.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="1023.35" y="729.3467">Review</text><line style="stroke:#181818;stroke-width:0.5;" x1="964" x2="1100" y1="740.5" y2="740.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="971" y="751.1484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="983" y="757.4951">id: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="971" y="767.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="983" y="773.792">user_id: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="971" y="783.7422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="983" y="790.0889">movie_id: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="971" y="800.0391"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="983" y="806.3857">review_text: text</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="971" y="816.3359"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="983" y="822.6826">date: datetime</text><line style="stroke:#181818;stroke-width:0.5;" x1="964" x2="1100" y1="829.9844" y2="829.9844"/></g><!--MD5=[09ce52be0ee7de43c61b6e2d59bf108b]
+class Person--><g id="elem_Person"><rect codeLine="50" fill="#F1F1F1" height="129.4844" id="Person" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="178" x="1028" y="181.5"/><ellipse cx="1088.25" cy="197.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1091.2188,203.1406 Q1090.6406,203.4375 1090,203.5781 Q1089.3594,203.7344 1088.6563,203.7344 Q1086.1563,203.7344 1084.8281,202.0938 Q1083.5156,200.4375 1083.5156,197.3125 Q1083.5156,194.1875 1084.8281,192.5313 Q1086.1563,190.875 1088.6563,190.875 Q1089.3594,190.875 1090,191.0313 Q1090.6563,191.1875 1091.2188,191.4844 L1091.2188,194.2031 Q1090.5938,193.625 1090,193.3594 Q1089.4063,193.0781 1088.7813,193.0781 Q1087.4375,193.0781 1086.75,194.1563 Q1086.0625,195.2188 1086.0625,197.3125 Q1086.0625,199.4063 1086.75,200.4844 Q1087.4375,201.5469 1088.7813,201.5469 Q1089.4063,201.5469 1090,201.2813 Q1090.5938,201 1091.2188,200.4219 L1091.2188,203.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="1108.75" y="202.3467">Person</text><line style="stroke:#181818;stroke-width:0.5;" x1="1029" x2="1205" y1="213.5" y2="213.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1036" y="224.1484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1048" y="230.4951">id: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1036" y="240.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="1048" y="246.792">name: string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1036" y="256.7422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="1048" y="263.0889">bio: text?</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1036" y="273.0391"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="1048" y="279.3857">birthdate: date?</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1036" y="289.3359"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="1048" y="295.6826">profile_picture: string?</text><line style="stroke:#181818;stroke-width:0.5;" x1="1029" x2="1205" y1="302.9844" y2="302.9844"/></g><!--MD5=[538c79c287d41ed7354f55db929e7e42]
+class Studio--><g id="elem_Studio"><rect codeLine="58" fill="#F1F1F1" height="80.5938" id="Studio" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="113" x="1241.5" y="205.5"/><ellipse cx="1273.15" cy="221.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1276.1188,227.1406 Q1275.5406,227.4375 1274.9,227.5781 Q1274.2594,227.7344 1273.5563,227.7344 Q1271.0563,227.7344 1269.7281,226.0938 Q1268.4156,224.4375 1268.4156,221.3125 Q1268.4156,218.1875 1269.7281,216.5313 Q1271.0563,214.875 1273.5563,214.875 Q1274.2594,214.875 1274.9,215.0313 Q1275.5563,215.1875 1276.1188,215.4844 L1276.1188,218.2031 Q1275.4938,217.625 1274.9,217.3594 Q1274.3063,217.0781 1273.6813,217.0781 Q1272.3375,217.0781 1271.65,218.1563 Q1270.9625,219.2188 1270.9625,221.3125 Q1270.9625,223.4063 1271.65,224.4844 Q1272.3375,225.5469 1273.6813,225.5469 Q1274.3063,225.5469 1274.9,225.2813 Q1275.4938,225 1276.1188,224.4219 L1276.1188,227.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="1290.85" y="226.3467">Studio</text><line style="stroke:#181818;stroke-width:0.5;" x1="1242.5" x2="1353.5" y1="237.5" y2="237.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1249.5" y="248.1484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1261.5" y="254.4951">id: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1249.5" y="264.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="1261.5" y="270.792">name: string</text><line style="stroke:#181818;stroke-width:0.5;" x1="1242.5" x2="1353.5" y1="278.0938" y2="278.0938"/></g><!--MD5=[a96594a83e2ecdc78cbf17c2ddf01934]
+class Category--><g id="elem_Category"><rect codeLine="63" fill="#F1F1F1" height="80.5938" id="Category" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="113" x="1389.5" y="205.5"/><ellipse cx="1413.05" cy="221.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1416.0188,227.1406 Q1415.4406,227.4375 1414.8,227.5781 Q1414.1594,227.7344 1413.4563,227.7344 Q1410.9563,227.7344 1409.6281,226.0938 Q1408.3156,224.4375 1408.3156,221.3125 Q1408.3156,218.1875 1409.6281,216.5313 Q1410.9563,214.875 1413.4563,214.875 Q1414.1594,214.875 1414.8,215.0313 Q1415.4563,215.1875 1416.0188,215.4844 L1416.0188,218.2031 Q1415.3938,217.625 1414.8,217.3594 Q1414.2063,217.0781 1413.5813,217.0781 Q1412.2375,217.0781 1411.55,218.1563 Q1410.8625,219.2188 1410.8625,221.3125 Q1410.8625,223.4063 1411.55,224.4844 Q1412.2375,225.5469 1413.5813,225.5469 Q1414.2063,225.5469 1414.8,225.2813 Q1415.3938,225 1416.0188,224.4219 L1416.0188,227.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="1428.95" y="226.3467">Category</text><line style="stroke:#181818;stroke-width:0.5;" x1="1390.5" x2="1501.5" y1="237.5" y2="237.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1397.5" y="248.1484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1409.5" y="254.4951">id: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1397.5" y="264.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="1409.5" y="270.792">name: string</text><line style="stroke:#181818;stroke-width:0.5;" x1="1390.5" x2="1501.5" y1="278.0938" y2="278.0938"/></g><!--MD5=[7a2541d0d762f9bf8a5c7c1262b9ad20]
+class MovieActor--><g id="elem_MovieActor"><rect codeLine="68" fill="#F1F1F1" height="80.5938" id="MovieActor" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="942" y="23.5"/><ellipse cx="958.8" cy="39.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M961.7688,45.1406 Q961.1906,45.4375 960.55,45.5781 Q959.9094,45.7344 959.2063,45.7344 Q956.7063,45.7344 955.3781,44.0938 Q954.0656,42.4375 954.0656,39.3125 Q954.0656,36.1875 955.3781,34.5313 Q956.7063,32.875 959.2063,32.875 Q959.9094,32.875 960.55,33.0313 Q961.2063,33.1875 961.7688,33.4844 L961.7688,36.2031 Q961.1438,35.625 960.55,35.3594 Q959.9563,35.0781 959.3313,35.0781 Q957.9875,35.0781 957.3,36.1563 Q956.6125,37.2188 956.6125,39.3125 Q956.6125,41.4063 957.3,42.4844 Q957.9875,43.5469 959.3313,43.5469 Q959.9563,43.5469 960.55,43.2813 Q961.1438,43 961.7688,42.4219 L961.7688,45.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="973.2" y="44.3467">MovieActor</text><line style="stroke:#181818;stroke-width:0.5;" x1="943" x2="1053" y1="55.5" y2="55.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="950" y="66.1484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="962" y="72.4951">movie_id: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="950" y="82.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="962" y="88.792">actor_id: int</text><line style="stroke:#181818;stroke-width:0.5;" x1="943" x2="1053" y1="96.0938" y2="96.0938"/></g><!--MD5=[6415063213547b35a52066d7b53eb916]
+link User to Review--><g id="link_User_Review"><path codeLine="80" d="M1003.76,582.65 C1009.37,620.27 1016.2,666.04 1021.73,703.16 " fill="none" id="User-to-Review" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1022.47,708.11,1025.088,698.6155,1021.7269,703.1655,1017.1768,699.8044,1022.47,708.11" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="37" x="1018" y="674.5669">writes</text></g><!--MD5=[ba2f5042560ee7aad394057f8cb5b966]
+link Movie to Review--><g id="link_Movie_Review"><path codeLine="81" d="M1136.64,631.68 C1118.07,656.58 1099.15,681.95 1082.6,704.15 " fill="none" id="Movie-to-Review" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1079.54,708.25,1088.1207,703.4157,1082.524,704.238,1081.7016,698.6413,1079.54,708.25" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="1113" y="674.5669">has</text></g><!--MD5=[8b0d4edc3ded5475c559c6a2f964d2e5]
+link Person to Movie--><g id="link_Person_Movie"><path codeLine="82" d="M1141.17,310.6 C1147.18,326.01 1153.71,342.39 1160,357.5 C1163.39,365.65 1166.94,374.03 1170.55,382.46 " fill="none" id="Person-to-Movie" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1172.57,387.15,1172.6643,377.3016,1170.5832,382.5617,1165.3231,380.4805,1172.57,387.15" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="98" x="1161" y="353.5669">associated with</text></g><!--MD5=[cfa2fb2694b95addffca2e1c0389268c]
+link Category to Movie--><g id="link_Category_Movie"><path codeLine="83" d="M1412.74,286.72 C1388.78,315.32 1355.16,355.47 1323.1,393.75 " fill="none" id="Category-to-Movie" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1319.6,397.93,1328.4504,393.6091,1322.815,394.1006,1322.3234,388.4652,1319.6,397.93" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="74" x="1363" y="353.5669">categorizes</text></g><!--MD5=[126b7aa97eb9edc6f1a80d5f88032beb]
+link Studio to Movie--><g id="link_Studio_Movie"><path codeLine="84" d="M1287.22,286.72 C1280.23,312.45 1270.7,347.54 1261.29,382.2 " fill="none" id="Studio-to-Movie" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1259.9,387.31,1266.1079,379.664,1261.2035,382.4829,1258.3845,377.5784,1259.9,387.31" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="1271" y="353.5669">produces</text></g><!--MD5=[1e3ccc7b1c773ac0dbc3329f07d15018]
+link MovieActor to Movie--><g id="link_MovieActor_Movie"><path codeLine="85" d="M970.28,104.8 C938.22,156.23 894.91,246.72 937,310.5 C984.92,383.13 1046.11,337.04 1117,387.5 C1121.52,390.71 1125.98,394.14 1130.38,397.73 " fill="none" id="MovieActor-to-Movie" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1134.4,401.07,1130.0241,392.2467,1130.5507,397.8789,1124.9184,398.4055,1134.4,401.07" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="72" x="938" y="250.5669">links actors</text></g><!--MD5=[9b8a0d0f41be5a817d2e32a613367a80]
+link MovieActor to Person--><g id="link_MovieActor_Person"><path codeLine="86" d="M1024.12,104.5 C1038.15,125.73 1055.85,152.5 1072.02,176.97 " fill="none" id="MovieActor-to-Person" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1074.81,181.19,1073.1844,171.4762,1072.053,177.0188,1066.5104,175.8874,1074.81,181.19" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="72" x="1054" y="147.5669">links actors</text></g><!--MD5=[ad54b3dfd0782dbccdb4ef661e63abaf]
+link Signin.vue to UsersController--><g id="link_Signin.vue_UsersController"><path codeLine="89" d="M83.85,87.35 C89.48,105 97.97,130.12 107,151.5 C112.67,164.91 119.4,179.09 125.96,192.25 " fill="none" id="Signin.vue-to-UsersController" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="128.37,197.04,127.9102,187.2019,126.1282,192.5707,120.7594,190.7887,128.37,197.04" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="108" y="147.5669">calls login</text></g><!--MD5=[5df0d46ffcaca408726b9b0df33bb69b]
+link Signup.vue to UsersController--><g id="link_Signup.vue_UsersController"><path codeLine="90" d="M235.6,87.07 C222.09,113.22 199.13,157.64 181.01,192.73 " fill="none" id="Signup.vue-to-UsersController" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="178.59,197.4,186.2798,191.2464,180.8887,192.9597,179.1754,187.5686,178.59,197.4" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="210" y="147.5669">calls register</text></g><!--MD5=[e9960639cab18782d7e0704e7c911bb6]
+link MovieDetail.vue to MoviesController--><g id="link_MovieDetail.vue_MoviesController"><path codeLine="91" d="M429.33,87.03 C425.1,105.41 422.21,131.71 433,151.5 C440.08,164.5 449.83,175.96 460.96,186 " fill="none" id="MovieDetail.vue-to-MoviesController" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="464.78,189.35,460.6408,180.4132,461.0171,186.0575,455.3728,186.4338,464.78,189.35" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="280" x="434" y="147.5669">calls getMovieDetails, addReview, rateMovie</text></g><!--MD5=[889d6f8ad753e0caabcc3de48a14efe7]
+link Searchbar.vue to MoviesController--><g id="link_Searchbar.vue_MoviesController"><path codeLine="92" d="M751.83,87.15 C745.78,105.86 735.11,132.55 719,151.5 C708.23,164.18 695.32,175.82 681.75,186.27 " fill="none" id="Searchbar.vue-to-MoviesController" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="677.51,189.47,687.096,187.2098,681.4911,186.4449,682.2559,180.84,677.51,189.47" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="732" y="147.5669">calls getMovies</text></g><!--MD5=[c48571229ffdcfff8853a8c34ccf6518]
+@startuml
+allowmixing
+
+' Backend Controllers
+class UsersController {
+  + register(Request): Response
+  + login(Request): Response
+  + logout(Request): Response
+}
+
+class MoviesController {
+  + getMovies(Request): Response
+  + getMovieDetails(int id): Response
+  + addReview(Request): Response
+  + rateMovie(Request): Response
+}
+
+' Database Entities
+class User {
+  - id: int
+  - name: string
+  - email: string
+  - password: string
+  - profile_picture: string?
+  - registration_date: datetime
+}
+
+class Movie {
+  - id: int
+  - type: enum
+  - title: string
+  - director_id: int?
+  - writer_id: int?
+  - category_id: int?
+  - studio_id: int?
+  - description: text
+  - release_year: year
+  - cover_image_url: string
+  - netflix_link: string?
+  - hbo_link: string?
+}
+
+class Review {
+  - id: int
+  - user_id: int
+  - movie_id: int
+  - review_text: text
+  - date: datetime
+}
+
+class Person {
+  - id: int
+  - name: string
+  - bio: text?
+  - birthdate: date?
+  - profile_picture: string?
+}
+
+class Studio {
+  - id: int
+  - name: string
+}
+
+class Category {
+  - id: int
+  - name: string
+}
+
+class MovieActor {
+  - movie_id: int
+  - actor_id: int
+}
+
+' Frontend Components
+component "Signin.vue"
+component "Signup.vue"
+component "MovieDetail.vue"
+component "Searchbar.vue"
+
+' Relationships between entities
+User - -> Review : "writes"
+Movie - -> Review : "has"
+Person - -> Movie : "associated with"
+Category - -> Movie : "categorizes"
+Studio - -> Movie : "produces"
+MovieActor - -> Movie : "links actors"
+MovieActor - -> Person : "links actors"
+
+' Frontend-Backend interactions
+Signin.vue - -> UsersController : "calls login"
+Signup.vue - -> UsersController : "calls register"
+MovieDetail.vue - -> MoviesController : "calls getMovieDetails, addReview, rateMovie"
+Searchbar.vue - -> MoviesController : "calls getMovies"
+@enduml
+
+@startuml
+allowmixing
+
+class UsersController {
+  + register(Request): Response
+  + login(Request): Response
+  + logout(Request): Response
+}
+
+class MoviesController {
+  + getMovies(Request): Response
+  + getMovieDetails(int id): Response
+  + addReview(Request): Response
+  + rateMovie(Request): Response
+}
+
+class User {
+  - id: int
+  - name: string
+  - email: string
+  - password: string
+  - profile_picture: string?
+  - registration_date: datetime
+}
+
+class Movie {
+  - id: int
+  - type: enum
+  - title: string
+  - director_id: int?
+  - writer_id: int?
+  - category_id: int?
+  - studio_id: int?
+  - description: text
+  - release_year: year
+  - cover_image_url: string
+  - netflix_link: string?
+  - hbo_link: string?
+}
+
+class Review {
+  - id: int
+  - user_id: int
+  - movie_id: int
+  - review_text: text
+  - date: datetime
+}
+
+class Person {
+  - id: int
+  - name: string
+  - bio: text?
+  - birthdate: date?
+  - profile_picture: string?
+}
+
+class Studio {
+  - id: int
+  - name: string
+}
+
+class Category {
+  - id: int
+  - name: string
+}
+
+class MovieActor {
+  - movie_id: int
+  - actor_id: int
+}
+
+component "Signin.vue"
+component "Signup.vue"
+component "MovieDetail.vue"
+component "Searchbar.vue"
+
+User - -> Review : "writes"
+Movie - -> Review : "has"
+Person - -> Movie : "associated with"
+Category - -> Movie : "categorizes"
+Studio - -> Movie : "produces"
+MovieActor - -> Movie : "links actors"
+MovieActor - -> Person : "links actors"
+
+Signin.vue - -> UsersController : "calls login"
+Signup.vue - -> UsersController : "calls register"
+MovieDetail.vue - -> MoviesController : "calls getMovieDetails, addReview, rateMovie"
+Searchbar.vue - -> MoviesController : "calls getMovies"
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 17:01:30 UTC 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>

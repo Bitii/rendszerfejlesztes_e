@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="299px" preserveAspectRatio="none" style="width:1165px;height:299px;background:#FFFFFF;" version="1.1" viewBox="0 0 1165 299" width="1165px" zoomAndPan="magnify"><defs/><g><!--MD5=[9eecb807d8a7c1ba44cb916f191401d3]
+entity Guest--><g id="elem_Guest"><ellipse cx="934" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M934,22 L934,49 M921,30 L947,30 M934,49 L921,64 M934,49 L947,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="913" y="78.4951">Guest</text></g><!--MD5=[c314e3ee34cb5222b41bf841e889a9bd]
+entity RegisteredUser--><g id="elem_RegisteredUser"><ellipse cx="401" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M401,22 L401,49 M388,30 L414,30 M401,49 L388,64 M401,49 L414,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="345" y="78.4951">Registered User</text></g><g id="elem_UC_Browse"><ellipse cx="833.2198" cy="163.744" fill="#F1F1F1" rx="74.2198" ry="17.244" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="778.2198" y="167.4915">Browse Movies</text></g><g id="elem_UC_Search"><ellipse cx="651.1868" cy="163.4374" fill="#F1F1F1" rx="72.6868" ry="16.9374" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="598.1868" y="167.1849">Search Movies</text></g><g id="elem_UC_Register"><ellipse cx="1105.8472" cy="163.7215" fill="#F1F1F1" rx="53.3472" ry="14.7215" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="1073.8472" y="167.469">Register</text></g><g id="elem_UC_Login"><ellipse cx="980.2231" cy="163.5485" fill="#F1F1F1" rx="37.7231" ry="14.5485" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="960.1116" y="166.9312">Login</text></g><g id="elem_UC_WriteReview"><ellipse cx="74.24" cy="277.548" fill="#F1F1F1" rx="68.24" ry="16.048" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="27.24" y="281.2956">Write Review</text></g><g id="elem_UC_RateMovie"><ellipse cx="272.0594" cy="277.7119" fill="#F1F1F1" rx="64.0594" ry="15.2119" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="231.0594" y="281.4594">Rate Movie</text></g><g id="elem_UC_AddFavorites"><ellipse cx="465.9563" cy="163.2913" fill="#F1F1F1" rx="76.9563" ry="17.7913" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="407.5675" y="167.0101">Add to Favorites</text></g><g id="elem_UC_ManageReviews"><ellipse cx="189.1163" cy="163.7233" fill="#F1F1F1" rx="94.1163" ry="21.2233" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="113.6163" y="166.5699">Manage Own Reviews</text></g><!--MD5=[5a6b03b8b6df4a870ddbf7d83f04b7de]
+link Guest to UC_Browse--><g id="link_Guest_UC_Browse"><path d="M912.83,69.24 C894.17,91.03 867.35,122.37 850.04,142.59 " fill="none" id="Guest-to-UC_Browse" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="846.72,146.47,855.6049,142.2206,849.9657,142.6667,849.5196,137.0274,846.72,146.47" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[3c60312cd9e49501e6725b4bf496b2e2]
+link Guest to UC_Search--><g id="link_Guest_UC_Search"><path d="M912.73,53.37 C865.34,73.13 750.51,121.01 689.92,146.27 " fill="none" id="Guest-to-UC_Search" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="684.95,148.35,694.7958,148.5959,689.5683,146.434,691.7302,141.2066,684.95,148.35" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5a687e50496296cab0d8668916607e76]
+link Guest to UC_Register--><g id="link_Guest_UC_Register"><path d="M955.09,58.97 C987.54,81.23 1049.47,123.72 1083.03,146.74 " fill="none" id="Guest-to-UC_Register" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1087.37,149.72,1082.2197,141.3251,1083.2498,146.8874,1077.6875,147.9174,1087.37,149.72" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[a0b9cd09cc67441be80fb366e5b2a356]
+link Guest to UC_Login--><g id="link_Guest_UC_Login"><path d="M948.43,81.51 C956.55,102.34 966.33,127.43 972.83,144.11 " fill="none" id="Guest-to-UC_Login" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="974.74,149,975.2002,139.1619,972.925,144.3411,967.7459,142.0659,974.74,149" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b09a2e2e6d76748faf940c09063a1f85]
+link RegisteredUser to UC_Browse--><g id="link_RegisteredUser_UC_Browse"><path d="M457.03,59.81 C541.59,82.9 700.55,126.32 782.02,148.57 " fill="none" id="RegisteredUser-to-UC_Browse" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="787.27,150.01,779.6365,143.7867,782.4455,148.6968,777.5354,151.5059,787.27,150.01" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e969f10c8f00482dc5c4d859cbacdb90]
+link RegisteredUser to UC_Search--><g id="link_RegisteredUser_UC_Search"><path d="M457.1,70.98 C505.62,93.88 574.28,126.29 615.54,145.76 " fill="none" id="RegisteredUser-to-UC_Search" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="620.18,147.95,613.7648,140.477,615.6631,145.8059,610.3342,147.7041,620.18,147.95" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[cc697e7de44a4f02f6d72b829320f430]
+link RegisteredUser to UC_WriteReview--><g id="link_RegisteredUser_UC_WriteReview"><path d="M344.92,53.42 C261.12,68 109.53,99.68 77,142.5 C51.82,175.64 60.36,227.89 67.8,256.36 " fill="none" id="RegisteredUser-to-UC_WriteReview" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="69.16,261.39,70.6559,251.6554,67.8468,256.5655,62.9367,253.7565,69.16,261.39" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[efc6df5113ee2ac1758fcfd81cb8e892]
+link RegisteredUser to UC_RateMovie--><g id="link_RegisteredUser_UC_RateMovie"><path d="M381.73,81.77 C361.88,119.78 329.73,180.28 300,231.5 C294.86,240.36 288.89,250.03 283.79,258.13 " fill="none" id="RegisteredUser-to-UC_RateMovie" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="281.05,262.45,289.2469,256.9901,283.727,258.227,282.4901,252.707,281.05,262.45" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[347d70d1ec7aeca2ece0b0b1b123da90]
+link RegisteredUser to UC_AddFavorites--><g id="link_RegisteredUser_UC_AddFavorites"><path d="M421.39,81.51 C432.14,101.03 444.96,124.31 454.09,140.88 " fill="none" id="RegisteredUser-to-UC_AddFavorites" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="456.56,145.37,455.7239,135.5567,454.1488,140.9898,448.7156,139.4147,456.56,145.37" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e7dd885df0fbe37c7cc17dd7a5750f4d]
+link RegisteredUser to UC_ManageReviews--><g id="link_RegisteredUser_UC_ManageReviews"><path d="M344.74,75.81 C307.68,96.44 260.13,122.91 227.37,141.14 " fill="none" id="RegisteredUser-to-UC_ManageReviews" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="222.64,143.77,232.45,142.8958,227.0108,141.3418,228.5648,135.9026,222.64,143.77" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[66aa5f237878fce916ae3601986985af]
+reverse link UC_ManageReviews to UC_WriteReview--><g id="link_UC_ManageReviews_UC_WriteReview"><path d="M154.07,198.52 C132.45,219.57 105.76,245.56 89.32,261.58 " fill="none" id="UC_ManageReviews-backto-UC_WriteReview" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="149.49,193.2,168.71,184.27,159.26,203.23,149.49,193.2" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="136" y="227.5669">includes</text></g><!--MD5=[14376ce4b7de7c36b7c7408f34aa9e81]
+reverse link UC_ManageReviews to UC_RateMovie--><g id="link_UC_ManageReviews_UC_RateMovie"><path d="M215.57,200.35 C231.25,221.52 250.23,247.12 261.69,262.59 " fill="none" id="UC_ManageReviews-backto-UC_RateMovie" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="209.93,204.5,203.65,184.27,221.18,196.17,209.93,204.5" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="239" y="227.5669">includes</text></g><!--MD5=[36e5598b4ff79c8f4d380e7fda9da1c0]
+@startuml
+actor "Guest" as Guest
+actor "Registered User" as RegisteredUser
+
+usecase "Browse Movies" as UC_Browse
+usecase "Search Movies" as UC_Search
+usecase "Register" as UC_Register
+usecase "Login" as UC_Login
+usecase "Write Review" as UC_WriteReview
+usecase "Rate Movie" as UC_RateMovie
+usecase "Add to Favorites" as UC_AddFavorites
+usecase "Manage Own Reviews" as UC_ManageReviews
+
+' Guest activities
+Guest - -> UC_Browse
+Guest - -> UC_Search
+Guest - -> UC_Register
+Guest - -> UC_Login
+
+' Registered user activities
+RegisteredUser - -> UC_Browse
+RegisteredUser - -> UC_Search
+RegisteredUser - -> UC_WriteReview
+RegisteredUser - -> UC_RateMovie
+RegisteredUser - -> UC_AddFavorites
+RegisteredUser - -> UC_ManageReviews
+
+UC_ManageReviews <|- - UC_WriteReview : includes
+UC_ManageReviews <|- - UC_RateMovie : includes
+@enduml
+
+@startuml
+actor "Guest" as Guest
+actor "Registered User" as RegisteredUser
+
+usecase "Browse Movies" as UC_Browse
+usecase "Search Movies" as UC_Search
+usecase "Register" as UC_Register
+usecase "Login" as UC_Login
+usecase "Write Review" as UC_WriteReview
+usecase "Rate Movie" as UC_RateMovie
+usecase "Add to Favorites" as UC_AddFavorites
+usecase "Manage Own Reviews" as UC_ManageReviews
+
+Guest - -> UC_Browse
+Guest - -> UC_Search
+Guest - -> UC_Register
+Guest - -> UC_Login
+
+RegisteredUser - -> UC_Browse
+RegisteredUser - -> UC_Search
+RegisteredUser - -> UC_WriteReview
+RegisteredUser - -> UC_RateMovie
+RegisteredUser - -> UC_AddFavorites
+RegisteredUser - -> UC_ManageReviews
+
+UC_ManageReviews <|- - UC_WriteReview : includes
+UC_ManageReviews <|- - UC_RateMovie : includes
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 17:01:30 UTC 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>

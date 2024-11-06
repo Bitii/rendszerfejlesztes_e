@@ -1,0 +1,32 @@
+@startuml
+
+actor "Guest" as Guest
+actor "Registered User" as RegisteredUser
+
+usecase "Browse Movies" as UC_Browse
+usecase "Search Movies" as UC_Search
+usecase "Register" as UC_Register
+usecase "Login" as UC_Login
+usecase "Write Review" as UC_WriteReview
+usecase "Rate Movie" as UC_RateMovie
+usecase "Add to Favorites" as UC_AddFavorites
+usecase "Manage Own Reviews" as UC_ManageReviews
+
+' Guest activities
+Guest --> UC_Browse
+Guest --> UC_Search
+Guest --> UC_Register
+Guest --> UC_Login
+
+' Registered user activities
+RegisteredUser --> UC_Browse
+RegisteredUser --> UC_Search
+RegisteredUser --> UC_WriteReview
+RegisteredUser --> UC_RateMovie
+RegisteredUser --> UC_AddFavorites
+RegisteredUser --> UC_ManageReviews
+
+UC_ManageReviews <|-- UC_WriteReview : includes
+UC_ManageReviews <|-- UC_RateMovie : includes
+
+@enduml

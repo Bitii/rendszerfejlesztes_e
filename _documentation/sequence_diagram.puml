@@ -1,0 +1,73 @@
+
+@startuml
+
+' Registration Sequence
+actor "User" as User
+participant "Frontend" as Frontend
+participant "API" as API
+participant "UsersController" as UsersController
+participant "Database" as Database
+
+User -> Frontend: Fill Registration Form
+Frontend -> API: POST /users/register
+API -> UsersController: validate(request)
+UsersController -> Database: Check if email exists
+Database --> UsersController: Email not found
+UsersController -> Database: Save new user
+Database --> UsersController: User created
+UsersController --> API: Response (User created)
+API --> Frontend: Registration successful
+
+' Login Sequence
+User -> Frontend: Fill Login Form
+Frontend -> API: POST /users/login
+API -> UsersController: validate(credentials)
+UsersController -> Database: Check user credentials
+Database --> UsersController: Valid credentials
+UsersController --> API: Token generated
+API --> Frontend: Login successful
+Frontend --> User: Welcome message
+
+' Browsing and Searching
+User -> Frontend: Search or Browse Movies
+Frontend -> API: GET /movies?query=search_term
+API -> MoviesController: Fetch movies
+MoviesController -> Database: Query movies
+Database --> MoviesController: Movie list
+MoviesController --> API: Movie data
+API --> Frontend: Render movie list
+
+' Writing a Review
+User -> Frontend: Write and submit review
+Frontend -> API: POST /movies/{id}/reviews
+API -> MoviesController: validate(review)
+MoviesController -> Database: Check if movie exists
+Database --> MoviesController: Movie exists
+MoviesController -> Database: Save review
+Database --> MoviesController: Review saved
+MoviesController --> API: Response (Review added)
+API --> Frontend: Review posted
+Frontend --> User: Success message
+
+' Rating a Movie
+User -> Frontend: Submit movie rating
+Frontend -> API: POST /movies/{id}/rate
+API -> MoviesController: validate(rating)
+MoviesController -> Database: Check if movie exists
+Database --> MoviesController: Movie exists
+MoviesController -> Database: Save rating
+Database --> MoviesController: Rating updated
+MoviesController --> API: Response (Rating saved)
+API --> Frontend: Rating successful
+
+' Adding to Favorites
+User -> Frontend: Add movie to favorites
+Frontend -> API: POST /users/favorites
+API -> UsersController: Add to favorites
+UsersController -> Database: Update favorites
+Database --> UsersController: Favorites updated
+UsersController --> API: Response (Added to favorites)
+API --> Frontend: Success message
+Frontend --> User: Movie added to favorites
+
+@enduml
