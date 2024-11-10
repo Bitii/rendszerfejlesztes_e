@@ -147,7 +147,7 @@ h2 {
   width: 100%;
   height: auto;
   display: block;
-  border-bottom: 2px solid #FFD700;
+  border-bottom: 2px solid #00acee;
 }
 
 .slide p {
