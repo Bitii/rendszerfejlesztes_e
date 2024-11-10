@@ -2,6 +2,7 @@
 import logo from '@/assets/logo.svg';
 import { ref } from 'vue';
 import Searchbar from './components/Searchbar.vue';
+import Logout from './components/Logout.vue';
 import { RouterLink, useRouter } from 'vue-router';
 import { useUserStore } from '../stores/user';
 import axios from 'axios';
@@ -9,29 +10,11 @@ import axios from 'axios';
 const userData = useUserStore();
 const router = useRouter();
 
-const logoutURL = "http://127.0.0.1:8000/api/users/logout";
-
 const dropdownVisible = ref(false);
 const dropDown = (hide = false) =>
 {
   dropdownVisible.value = hide ? false : !dropdownVisible.value;
 };
-
-const logout = async () => {
-  try {
-    let resp = await axios.post(logoutURL, {}, {
-      headers: {
-        Authorization: `Bearer ${userData.user.token}`
-      }
-    });
-    console.log(resp);
-    userData.user = {};
-    router.push("/");
-  } catch (error) {
-    console.log(error);
-    
-  }    
-}
 </script>
 
 <template>
@@ -48,7 +31,7 @@ const logout = async () => {
           <RouterLink @click="dropDown(true)" to="/user">User</RouterLink>
         </div>
         <Searchbar /> <!-- Searchbar komponens megjelenítése -->
-        <button class="logoutbtn" v-if="userData.user.id" @click="logout">Log out</button>
+        <Logout />
       </div>
     </header>
 
@@ -135,11 +118,7 @@ body {
 .topnav button:hover {
   background-color: var(--blue);
   color: var(--white);
-}
-
-.logoutbtn {
-  position: absolute;
-  right: -350px;
+  cursor: pointer;
 }
 
 .dropdown-content {

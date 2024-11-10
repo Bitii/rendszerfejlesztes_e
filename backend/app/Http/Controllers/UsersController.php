@@ -36,7 +36,7 @@ class UsersController extends Controller
 
         return response([
             'user' => $user,
-        ]);
+        ], 200);
     }
 
     public function login(Request $request)
