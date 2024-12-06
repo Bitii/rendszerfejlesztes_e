@@ -10,7 +10,6 @@ const updateMovieInfo = async (actionType) => {
   try {
     const userStore = useUserStore();
     const userId = userStore.user?.id;
-    console.log(userId);
 
     if (!userId) {
       alert("User is not logged in!");
@@ -41,6 +40,26 @@ const addToFavorites = () => {
 
 const addToBookmarks = () => {
   updateMovieInfo('bookmark');
+  addBrowserBookmark();
+};
+
+const addBrowserBookmark = () => {
+  const movieTitle = movieData.movie.title || 'Movie';
+  const movieUrl = `https://www.themoviedb.org/movie/${movieData.movie.id}`;
+
+  if (window.sidebar && window.sidebar.addPanel) {
+    window.sidebar.addPanel(movieTitle, movieUrl, '');
+  } else if (window.external && 'AddFavorite' in window.external) {
+    window.external.AddFavorite(movieUrl, movieTitle);
+  } else if (window.chrome) {
+    alert(
+      `To bookmark this movie, press ${navigator.platform.includes('Mac') ? 'Cmd' : 'Ctrl'}+D.`
+    );
+  } else {
+    alert(
+      `Use the bookmark feature in your browser to save this link: ${movieUrl}`
+    );
+  }
 };
 
 const markAsSeen = () => {
