@@ -16,24 +16,18 @@ Route::post('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/movies', function () {
-    return [
-        [
-            "title" => "Looney Tunes",
-            "description" => "A classic cartoon featuring Bugs Bunny and friends.",
-            "poster" => "https://example.com/posters/looney-tunes.jpg"
-        ],
-        [
-            "title" => "Tom and Jerry",
-            "description" => "A humorous series about the rivalry between a cat and a mouse.",
-            "poster" => "https://example.com/posters/tom-and-jerry.jpg"
-        ],
-        [
-            "title" => "The Lion King",
-            "description" => "A story about the journey of Simba, a lion cub.",
-            "poster" => "https://example.com/posters/lion-king.jpg"
-        ]
-    ];
+    return [];
 });
+
+Route::post('/movie-info', [UsersController::class, 'updateMovieInfo']);
+
+Route::get('/movie-info/{user_id}', [UsersController::class, 'getMovieInfo']);
+
+
+
+
+
+
 
 
 ?>

@@ -1,121 +1,169 @@
 <script setup>
-import { useMovieStore } from '../../stores/movie'; //importáljuk a store-t
+import { useMovieStore } from '../../stores/movie';
+import axios from 'axios';
+import { useUserStore } from '../../stores/user';
 
 const img = "https://image.tmdb.org/t/p/original";
 const movieData = useMovieStore();
 
+const updateMovieInfo = async (actionType) => {
+  try {
+    const userStore = useUserStore();
+    const userId = userStore.user?.id;
+    console.log(userId);
+
+    if (!userId) {
+      alert("User is not logged in!");
+      return;
+    }
+
+    const response = await axios.post('http://127.0.0.1:8000/api/movie-info', {
+      user_id: userId,
+      movie_id: movieData.movie.id,
+      [actionType]: true,
+    });
+
+    if (response.status === 200) {
+      alert(`Movie marked as ${actionType}!`);
+    } else {
+      console.log('Unexpected response from the server:', response);
+      alert('Something went wrong!');
+    }
+  } catch (error) {
+    console.error('Error updating movie info:', error.response?.data || error.message);
+    alert('Failed to update the database.');
+  }
+};
+
+const addToFavorites = () => {
+  updateMovieInfo('favorite');
+};
+
+const addToBookmarks = () => {
+  updateMovieInfo('bookmark');
+};
+
+const markAsSeen = () => {
+  updateMovieInfo('seen');
+};
 </script>
 
 <template>
-    <div class="movie">
-        <div class="movie-poster">
-            <img :src="img + movieData.movie.poster_path" alt="The searched movie's picture">
-            <p>Release date: {{ movieData.movie.release_date }}</p>
-        </div>
-        <div class="movie-data">
-            <h1>{{ movieData.movie.title }}</h1>
-            <button id="heart">❤</button>
-            <button id="bookmark">🔖</button>
-            <button id="seen">👁</button>
-            <p>{{ movieData.movie.overview }}</p>
-            <br><br>
-            <p>Rating: {{ movieData.movie.vote_average }}</p><br><br>
-            <p>Your rating: </p>
-        </div>
+  <div class="movie">
+    <div class="movie-poster">
+      <img :src="img + movieData.movie.poster_path" alt="The movie's poster">
+      <div class="action-buttons">
+        <button id="heart" @click="addToFavorites">❤</button>
+        <button id="bookmark" @click="addToBookmarks">🔖</button>
+        <button id="seen" @click="markAsSeen">👁</button>
+      </div>
+      <p>Release date: {{ movieData.movie.release_date }}</p>
     </div>
-    <div class="movie2">
-        <div class="people">
-            <p>Director: ggggggg gggggggggggggggggggggg gggggggggggllll lllllllllllgggggg ggggggggggggggggggg</p>
-            <p>Writer: </p> 
-            <p>Stars: </p>
-        </div>
-        <div class="category">
-            <p>Categories:<br>kkkkkkk kkkkkkk kkkkkkkk kkkkkkkk kkkkkkkk kkkkkk kkkkkk</p>
-        </div>
+    <div class="movie-data">
+      <h1>{{ movieData.movie.title }}</h1>
+      <p>{{ movieData.movie.overview }}</p>
+      <p>Rating: {{ movieData.movie.vote_average }}</p>
     </div>
+  </div>
+  <div class="movie2">
+    <div class="people">
+      <p>Director: Christopher Nolan</p>
+      <p>Writer: Jonathan Nolan</p>
+      <p>Stars: Christian Bale, Michael Caine, Heath Ledger</p>
+    </div>
+    <div class="category">
+      <p>Categories: Action, Drama, Thriller</p>
+    </div>
+  </div>
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 img {
-    width: 250px;
-    height: auto;
+  width: 250px;
+  height: auto;
 }
 
 .movie {
-    display: inline-flex;
-    margin: 10px 35px 20px 35px;
-    position: relative;
+  display: inline-flex;
+  margin: 10px 35px 20px 35px;
+  position: relative;
 }
 
-.movie-poster, .movie-data {
-    position: relative;
-    padding-left: 30px;
-    height: auto;
+.movie-poster {
+  text-align: center;
+  padding-left: 30px;
+  height: auto;
+  position: relative;
 }
 
-.movie-data {
-    text-align: left;
+.action-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
-.movie-data button {
-    position: absolute;
-    text-align: center;
-    top: 5px;
-    right: 200px;
-    background: none;
-    cursor: pointer;
-    font-size: 30px;
-    margin: 0px 10px;
-    color: var(--gray);
-    z-index: 1;
-    border: 0;
+.action-buttons button {
+  background: none;
+  cursor: pointer;
+  font-size: 30px;
+  color: var(--gray);
+  border: none;
 }
 
 #seen {
-    top: 0;
-    font-size: 40px;
-    right: 110px;
+  font-size: 40px;
 }
-#bookmark {
-    right: 150px;
+
+.movie-data {
+  text-align: left;
+  padding-left: 30px;
 }
 
 h1 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .movie2 {
-    display: inline-flex;
-    position: relative;
-    text-align: left;
-    overflow: hidden;
-    word-wrap: break-word;
-    width: 100%;
+  display: inline-flex;
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  word-wrap: break-word;
+  width: 100%;
 }
+
 .movie2 p {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
+
 .people {
-    text-align: left;
-    display: block;
-    position: relative;
-    padding-left: 65px;
-    height: auto;
-    max-width: 55%;
-    left: 0%;
+  text-align: left;
+  display: block;
+  position: relative;
+  padding-left: 65px;
+  height: auto;
+  max-width: 55%;
+  left: 0%;
 }
 
 .category {
-    position: absolute;
-    left: 55%;
-    padding: 0 30px;
-    height: auto;
+  position: absolute;
+  left: 55%;
+  padding: 0 30px;
+  height: auto;
 }
 </style>

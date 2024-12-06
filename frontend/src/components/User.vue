@@ -1,203 +1,169 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useUserStore } from '../../stores/user';
-import placeholderImage from "@/assets/placeholder.jpg"; // Pelda film/sorozat kep
-import profilePicture from "@/assets/profile.jpg"; // Pelda profil-kep
+import placeholderImage from "@/assets/placeholder.jpg"; // Placeholder image
+import axios from 'axios'; // Axios to fetch data from API
 
-// Felhasznalo informacio
-const userData = useUserStore();
-const username = ref('username_123');
-const email = ref('email@email.com');
-const password = ref('password1234');
-const registrationDate = ref('YYYY-MM-DD');
+// User data from Pinia
+const userStore = useUserStore();
+const userId = userStore.user?.id;
+const username = ref(userStore.user?.nev || 'Default Username');
+const email = ref(userStore.user?.email || 'example@example.com');
+const registrationDate = ref(userStore.user?.regisztracios_datum || 'N/A');
 
-username.value = userData.user.nev;
-email.value = userData.user.email;
-registrationDate.value = userData.user.regisztracios_datum;
-
-// Felhasznalo adatai: kedvencek, latottak, nezesi lista...
+// Movie categories
 const favorites = ref([]);
 const seenMovies = ref([]);
 const watchlist = ref([]);
 
-const reviews = ref([]);
+// TMDB API details
+const TMDB_API_BASE = "https://api.themoviedb.org/3";
+const TMDB_API_KEY = "83e8713d6dfc87ac2ec4a2da58f338cd"; 
 
-const editMode = ref(false);
-const toggleEditMode = () => {
-    editMode.value = !editMode.value;
+// Fetch user movies from the backend
+const loadUserMovies = async () => {
+  if (!userId) {
+    console.error("User ID not found");
+    return;
+  }
+
+  try {
+    const response = await axios.get(`/api/movie-info/${userId}`);
+    const movies = response.data.movies || [];
+
+    // Categorize movies
+    favorites.value = movies.filter(movie => movie.favorite === 1);
+    seenMovies.value = movies.filter(movie => movie.seen === 1);
+    watchlist.value = movies.filter(movie => movie.bookmark === 1);
+  } catch (error) {
+    console.error("Error loading user movies:", error);
+    favorites.value = [];
+    seenMovies.value = [];
+    watchlist.value = [];
+  }
 };
 
-// Szekciok nyitasa/zarsa
+// Fetch movie details from TMDB
+const fetchMovieDetails = async (movieId) => {
+  try {
+    const response = await axios.get(`${TMDB_API_BASE}/movie/${movieId}?api_key=${TMDB_API_KEY}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching movie details:", error);
+    return null;
+  }
+};
+
+// Bookmark functionality
+const createBookmark = async (movieId) => {
+  const movie = await fetchMovieDetails(movieId);
+  if (movie) {
+    const bookmarkUrl = `${TMDB_API_BASE}/movie/${movieId}`;
+    window.open(bookmarkUrl, '_blank');
+  } else {
+    alert("Unable to create bookmark.");
+  }
+};
+
+// Load user movies on mount
+onMounted(() => {
+  loadUserMovies();
+});
+
+// Toggle visibility for categories
 const isFavouritesOpen = ref(false);
 const isSeenOpen = ref(false);
 const isWatchlistOpen = ref(false);
 
 const toggleFavourites = () => {
-    isFavouritesOpen.value = !isFavouritesOpen.value;
-    if (isFavouritesOpen.value) {
-        isSeenOpen.value = false;
-        isWatchlistOpen.value = false;
-    }
+  isFavouritesOpen.value = !isFavouritesOpen.value;
+  if (isFavouritesOpen.value) {
+    isSeenOpen.value = false;
+    isWatchlistOpen.value = false;
+  }
 };
 
 const toggleSeen = () => {
-    isSeenOpen.value = !isSeenOpen.value;
-    if (isSeenOpen.value) {
-        isFavouritesOpen.value = false;
-        isWatchlistOpen.value = false;
-    }
+  isSeenOpen.value = !isSeenOpen.value;
+  if (isSeenOpen.value) {
+    isFavouritesOpen.value = false;
+    isWatchlistOpen.value = false;
+  }
 };
 
 const toggleWatchlist = () => {
-    isWatchlistOpen.value = !isWatchlistOpen.value;
-    if (isWatchlistOpen.value) {
-        isFavouritesOpen.value = false;
-        isSeenOpen.value = false;
-    }
-};
-// Dinamikus kep szam beallitasa a kepernyo merete alapjan
-const numberOfImages = ref(0);
-
-const updateNumberOfImages = () => {
-    const containerWidth = window.innerWidth;
-    const imageWidth = 165; // feltetelezett kep szelesseg pixelben (kep + hely + padding)
-    const imagesPerRow = Math.floor(containerWidth / imageWidth);
-    const rows = 2; // Mindig ket sor
-    numberOfImages.value = imagesPerRow * rows; // mindig ket sorban tartsuk a kepeket
-    [favorites, seenMovies, watchlist].forEach(list => {
-        while (list.value.length < numberOfImages.value) {
-            list.value.push({ image: placeholderImage, title: "Title" });
-        }
-        if (list.value.length > numberOfImages.value) {
-            list.value.length = numberOfImages.value;
-        }
-    });
-};
-
-onMounted(() => {
-    updateNumberOfImages();
-    window.addEventListener('resize', updateNumberOfImages);
-});
-
-onUnmounted(() => {
-    window.removeEventListener('resize', updateNumberOfImages);
-});
-
-// Felhasznaloi bejelentkezes kezelese
-const isLoggedIn = ref(false);
-const toggleLogin = () => {
-    isLoggedIn.value = !isLoggedIn.value;
-};
-
-const addProfilePicture = () => {
-    // Kep feltoltese
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = 'image/*';
-    input.onchange = (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                profilePicture.value = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-    };
-    input.click();
-};
-
-const deleteProfilePicture = () => {
-    profilePicture.value = placeholderImage;
-};
-
-const editReview = (index) => {
-    // ...
-};
-
-const deleteReview = (index) => {
-    reviews.value.splice(index, 1);
+  isWatchlistOpen.value = !isWatchlistOpen.value;
+  if (isWatchlistOpen.value) {
+    isFavouritesOpen.value = false;
+    isSeenOpen.value = false;
+  }
 };
 </script>
 
 <template>
-    <div id="user-profile">
-        <!-- Fejlec -->
-        <header>
-            <div class="profile-pic">
-                <img :src="profilePicture" alt="profile picture" class="profile-img" />
-                <button class="add-picture-button" @click="addProfilePicture">➕</button>
-                <button class="delete-picture-button" @click="deleteProfilePicture">🗑️</button>
-                <p>Registration date: {{ registrationDate }}</p>
-            </div>
-            <div class="profile-info">
-                <p>Username: <span>{{ username }}</span></p>
-                <p>Email address: <span v-if="!editMode">{{ email }}</span><input v-if="editMode" type="text" v-model="email" /></p>
-                <p>Password: <span v-if="!editMode">********</span><input v-if="editMode" type="password" v-model="password" /></p>                                
-            </div>
-            <button class="edit-button" @click="toggleEditMode">{{ editMode ? 'Save Profile' : 'Edit Profile' }}</button>
-        </header>
+  <div id="user-profile">
+    <!-- User Header -->
+    <header>
+      <div class="profile-pic">
+        <img :src="placeholderImage" alt="Profile Picture" class="profile-img" />
+        <p>Registration Date: {{ registrationDate }}</p>
+      </div>
+      <div class="profile-info">
+        <p>Username: {{ username }}</p>
+        <p>Email: {{ email }}</p>
+      </div>
+    </header>
 
-        <!-- Szekciok -->
-        <section>
-            <!-- Kedvencek -->
-            <h3 @click="toggleFavourites" :style="{ color: isFavouritesOpen ? '#FFD700' : '', borderBottom: isFavouritesOpen ? '2px solid #FFD700' : '' }">
-                Favourites <span>{{ isFavouritesOpen ? '▼' : '▶' }}</span>
-            </h3>
-            <div v-if="isFavouritesOpen" class="section-content">
-                <div class="cards">
-                    <div v-for="(item, index) in favorites.slice(0, numberOfImages)" :key="'favourites-' + index" class="card">
-                        <img :src="item.image" alt="Movie image {{ index + 1 }}" class="card-img" />
-                        <p>{{ item.title }}</p>
-                        <button @click="deleteReview(index)" class="delete-button">🗑️</button>
-                    </div>
-                </div>
-            </div>
+    <!-- Favorites -->
+    <section>
+      <h3 @click="toggleFavourites" :style="{ color: isFavouritesOpen ? '#FFD700' : '' }">
+        Favorites <span>{{ isFavouritesOpen ? '▼' : '▶' }}</span>
+      </h3>
+      <div v-if="isFavouritesOpen" class="section-content">
+        <div v-if="favorites.length > 0" class="cards">
+          <div v-for="(movie, index) in favorites" :key="'favourites-' + index" class="card">
+            <img :src="movie.image || placeholderImage" alt="Movie Image" class="card-img" />
+            <p>{{ movie.title }}</p>
+            <button @click="createBookmark(movie.movie_id)">🔖 Bookmark</button>
+          </div>
+        </div>
+        <div v-else>No content in this category</div>
+      </div>
+    </section>
 
-            <!-- Mar latott filmek/sorozatok -->
-            <h3 @click="toggleSeen" :style="{ color: isSeenOpen ? '#FFD700' : '', borderBottom: isSeenOpen ? '2px solid #FFD700' : '' }">
-                Seen Movies <span>{{ isSeenOpen ? '▼' : '▶' }}</span>
-            </h3>
-            <div v-if="isSeenOpen" class="section-content">
-                <div class="cards">
-                    <div v-for="(item, index) in seenMovies.slice(0, numberOfImages)" :key="'seen-' + index" class="card">
-                        <img :src="item.image" alt="Movie image {{ index + 1 }}" class="card-img" />
-                        <p>{{ item.title }}</p>
-                        <button @click="deleteReview(index)" class="delete-button">🗑️</button>
-                    </div>
-                </div>
-            </div>
+    <!-- Seen Movies -->
+    <section>
+      <h3 @click="toggleSeen" :style="{ color: isSeenOpen ? '#FFD700' : '' }">
+        Seen Movies <span>{{ isSeenOpen ? '▼' : '▶' }}</span>
+      </h3>
+      <div v-if="isSeenOpen" class="section-content">
+        <div v-if="seenMovies.length > 0" class="cards">
+          <div v-for="(movie, index) in seenMovies" :key="'seen-' + index" class="card">
+            <img :src="movie.image || placeholderImage" alt="Movie Image" class="card-img" />
+            <p>{{ movie.title }}</p>
+          </div>
+        </div>
+        <div v-else>No content in this category</div>
+      </div>
+    </section>
 
-            <!-- Varolista -->
-            <h3 @click="toggleWatchlist" :style="{ color: isWatchlistOpen ? '#FFD700' : '', borderBottom: isWatchlistOpen ? '2px solid #FFD700' : '' }">
-                Watchlist <span>{{ isWatchlistOpen ? '▼' : '▶' }}</span>
-            </h3>
-            <div v-if="isWatchlistOpen" class="section-content watchlist">
-                <div class="cards">
-                    <div v-for="(item, index) in watchlist.slice(0, numberOfImages)" :key="'watchlist-' + index" class="card">
-                        <img :src="item.image" alt="Movie image {{ index + 1 }}" class="card-img" />
-                        <p>{{ item.title }}</p>
-                        <button @click="deleteReview(index)" class="delete-button">🗑️</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Velemenyek -->
-        <section class="reviews-section">
-            <h3>Reviews</h3>
-            <div v-for="(review, index) in reviews" :key="'review-' + index" class="review">
-                <h4>{{ review.title }}</h4>
-                <p v-if="!editMode">{{ review.content }}</p>
-                <input v-if="editMode" type="text" v-model="review.content" />
-                <div class="review-actions">
-                    <button v-if="editMode" @click="toggleEditMode">✔️</button>
-                    <button @click="editReview(index)">✏️</button>
-                    <button @click="deleteReview(index)">🗑️</button>
-                </div>
-            </div>
-        </section>
-    </div>
+    <!-- Watchlist -->
+    <section>
+      <h3 @click="toggleWatchlist" :style="{ color: isWatchlistOpen ? '#FFD700' : '' }">
+        Watchlist <span>{{ isWatchlistOpen ? '▼' : '▶' }}</span>
+      </h3>
+      <div v-if="isWatchlistOpen" class="section-content">
+        <div v-if="watchlist.length > 0" class="cards">
+          <div v-for="(movie, index) in watchlist" :key="'watchlist-' + index" class="card">
+            <img :src="movie.image || placeholderImage" alt="Movie Image" class="card-img" />
+            <p>{{ movie.title }}</p>
+            <button @click="createBookmark(movie.movie_id)">🔖 Bookmark</button>
+          </div>
+        </div>
+        <div v-else>No content in this category</div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <style scoped>
